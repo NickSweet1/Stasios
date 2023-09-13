@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID
     subName: String
     ingredients: [String]!
+    price: Float
   }
   type Query {
     subs: [Subs]!

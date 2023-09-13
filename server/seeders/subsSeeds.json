@@ -1,50 +1,62 @@
 [
     {
         "subName": "The Package",
-        "ingredients": ["Housemade Meatballs", "Spicy Italian Sausage", "Marinara"]
+        "ingredients": ["Housemade Meatballs", "Spicy Italian Sausage", "Marinara"],
+        "price": 10.00
     },
     {
         "subName": "The REAL Steak Sandwich",
-        "ingredients": ["Ribeye Steak", "Fresh Mozzarella Cheese", "Onions", "Hot Cherry Peppers"]
+        "ingredients": ["Ribeye Steak", "Fresh Mozzarella Cheese", "Onions", "Hot Cherry Peppers"],
+        "price": 12.95 
     },
     {
         "subName": "Lou Special",
-        "ingredients": ["Grilled Chicken", "Bacon", "Lettuce", "Tomato", "Banana Peppers", "Red Onion", "House Italian Dressing"]
+        "ingredients": ["Grilled Chicken", "Bacon", "Lettuce", "Tomato", "Banana Peppers", "Red Onion", "House Italian Dressing"],
+        "price": 11.00
     },
     {
         "subName": "The Flag (Caprese)",
-        "ingredients": ["Fresh Mozzarella Cheese", "Tomato", "Fresh Basil"] 
+        "ingredients": ["Fresh Mozzarella Cheese", "Tomato", "Fresh Basil"],
+        "price": 8.00
     },
     {
         "subName": "D",
-        "ingredients": ["Chicken Cutlet", "Broccoli Rabe", "Long Hots", "Fresh Mozzarella Cheese"]
+        "ingredients": ["Chicken Cutlet", "Broccoli Rabe", "Long Hots", "Fresh Mozzarella Cheese"],
+        "price": 12.00
     },
     {
         "subName": "Italian American",
-        "ingredients": ["Roast Beef", "Turkey", "Ham", "Lettuce", "Tomato", "Provolone", "Banana Peppers", "Sundried Tomato Pesto"]
+        "ingredients": ["Roast Beef", "Turkey", "Ham", "Lettuce", "Tomato", "Provolone", "Banana Peppers", "Sundried Tomato Pesto"],
+        "price": 12.00
     },
     {
         "subName": "The Stasio",
-        "ingredients": ["Prosciutto", "Hot Capicola", "Mild Soppresata", "Fresh Mozzarella Cheese", "Roasted Red Peppers", "Red Onion", "White Balsamic Vingarette"]
+        "ingredients": ["Prosciutto", "Hot Capicola", "Mild Soppresata", "Fresh Mozzarella Cheese", "Roasted Red Peppers", "Red Onion", "White Balsamic Vingarette"],
+        "price": 13.00
     },
     {
         "subName": "Melenzani",
-        "ingredients": ["Eggplant", "Spinach", "Roasted Red Peppers", "Marinated Tomatoes", "Fresh Mozzarella Cheese", "Balsamic Reduction"]
+        "ingredients": ["Eggplant", "Spinach", "Roasted Red Peppers", "Marinated Tomatoes", "Fresh Mozzarella Cheese", "Balsamic Reduction"],
+        "price": 11.50
     },
     {
         "subName": "Italian Cuban",
-        "ingredients": ["Porchetta", "Ham", "Swiss Cheese", "Pickle", "Ayoli"]
+        "ingredients": ["Porchetta", "Ham", "Swiss Cheese", "Pickle", "Ayoli"],
+        "price": 11.50
     },
     {
         "subName": "Italian Brisket",
-        "ingredients": ["Brisket", "Marinara", "Fresh Mozzarella Cheese"]
+        "ingredients": ["Brisket", "Marinara", "Fresh Mozzarella Cheese"],
+        "price": 12.00
     },
     {
         "subName": "Broccoli Rabe & Sausage",
-        "ingredients": ["Broccoli Rabe", "Spicy Italian Sausage"]
+        "ingredients": ["Broccoli Rabe", "Spicy Italian Sausage"],
+        "price": 10.00
     },
     {
         "subName": "The Creator",
-        "ingredients": ["One Choice of Meat", "One Choice of Cheese", "Standard Toppings"]
+        "ingredients": ["One Choice of Meat", "One Choice of Cheese", "Standard Toppings"],
+        "price": 8.95
     }
 ]

@@ -12,6 +12,9 @@ const subSchema = new Schema({
             required: 'Include ingredients for the sub!'
         },
     ],
+    price: {
+        type: Number
+    }
 });
 
 const Subs = model('Sub', subSchema);
