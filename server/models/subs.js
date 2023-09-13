@@ -5,7 +5,13 @@ const subSchema = new Schema({
         type: String,
         required: 'You need a name!',
         minlength: 1,
-    }
+    },
+    ingredients: [
+        {
+            type: String,
+            required: 'Include ingredients for the sub!'
+        },
+    ],
 });
 
 const Subs = model('Sub', subSchema);
