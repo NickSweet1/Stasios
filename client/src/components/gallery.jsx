@@ -30,6 +30,7 @@ class MyWrapper extends React.Component {
               src={image}
               style={{ width: "100%", display: "block" }}
               alt="Stacios"
+              className="hover:scale-110 hover:opacity-80"
             />
           ))}
         </Masonry>
@@ -37,3 +38,5 @@ class MyWrapper extends React.Component {
     );
   }
 }
+
+export default MyWrapper;
