@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-<p>Hello world!</p>
+        <p className="text-white">Hello world!</p>
       </header>
     </div>
   );
