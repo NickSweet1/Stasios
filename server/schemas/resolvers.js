@@ -1,10 +1,16 @@
-const { Subs } = require('../models');
+const { Sub, User } = require('../models');
 
 const resolvers = {
   Query: {
     subs: async () => {
-      return Subs.find().sort({ createdAt: -1 });
+      return Sub.find();
     },
+    users: async () => {
+      return User.find();
+    },
+    user: async(parent, { name }) => {
+      return User.findOne({ name });
+    }
   },
 };
 

@@ -1,3 +1,4 @@
-const Subs = require('./subs');
+const Sub = require('./sub');
+const User = require('./user');
 
-module.exports = { Subs };
+module.exports = { Sub, User }
