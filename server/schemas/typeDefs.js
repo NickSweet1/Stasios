@@ -10,14 +10,22 @@ const typeDefs = gql`
   type User {
     _id: ID
     name: String!
-    pin: Int!
+    pin: String!
+  }
+  type Auth {
+    token: ID!
+    user: User
   }
   type Query {
     users: [User]
-    user(name: String!): User
+    user(name: String, pin: String): User
+    me: User
   }
   type Query {
     subs: [Sub]!
+  }
+  type Mutation {
+    login(name: String, pin: String!): Auth
   }
 
 `;

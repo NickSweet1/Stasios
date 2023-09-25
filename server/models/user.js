@@ -7,10 +7,11 @@ const userSchema = new Schema({
         minlength: 1,
     },
     pin: {
-        type: Number,
+        type: String,
         required: 'Please assign a pin to the user.'
     }
 });
+
 
 const User = model('User', userSchema);
 
