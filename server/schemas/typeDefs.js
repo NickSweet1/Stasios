@@ -23,9 +23,14 @@ const typeDefs = gql`
   }
   type Query {
     subs: [Sub]!
+    sub(subName: String!): Sub
   }
   type Mutation {
     login(name: String, pin: String!): Auth
+    addSub(subName: String!, ingredients: String!, price: Int!): Sub
+    removeSub(subName: String!): Sub
+    editSub(subName: String!, ingredients: [String], price: Int): Sub
+
   }
 
 `;
