@@ -21,4 +21,78 @@ const heroImages = [
   },
 ];
 
-export { heroImages };
+const galleryImages = [
+  {
+    title: "Pasta Salad",
+    description:
+      "Loaded and refreshing Italian Pasta Salad! Made with tender pasta, smoked salami, fresh veggies and herbs, two types of cheese, and a tangy homemade Italian dressing.",
+    image: "https://i.imgur.com/Vkysgnf.jpg",
+  },
+  {
+    title: "Italian American",
+    Description:
+      "A fusion of flavors awaits in the Italian American sub. Featuring roast beef, turkey, ham, lettuce, tomato, provolone, banana peppers, and sundried tomato pesto. A party for your taste buds.",
+    image: "https://i.imgur.com/Poo3AKV.jpg",
+  },
+  {
+    title: "The Package",
+    description:
+      "A mouthwatering sub filled with housemade meatballs, spicy Italian sausage, and savory marinara sauce. Perfectly satisfying.",
+    image: "https://i.imgur.com/M2NQM7e.jpg",
+  },
+  {
+    title: "The Reak Steak Sandwich",
+    description:
+      "Indulge in this steak sandwich featuring succulent ribeye steak, fresh mozzarella cheese, onions, and a kick of hot cherry peppers. A hearty delight.",
+    image: "https://i.imgur.com/kDOhaYQ.jpg",
+  },
+  {
+    title: "The Flag(Caprese)",
+    description:
+      "Experience Italy with The Flag, a caprese sub that brings together fresh mozzarella cheese, ripe tomatoes, and fragrant basil leaves. Simple yet divine.",
+    image: "https://i.imgur.com/x7sD2Ra.jpg",
+  },
+  {
+    title: "The Family",
+    description: "The heart of stasios our family",
+    image: "https://i.imgur.com/iBHFxIB.jpg",
+  },
+  {
+    title: "The Stasio",
+    description:
+      "The Stasio sub offers a symphony of tastes with prosciutto, hot capicola, mild soppresata, fresh mozzarella cheese, roasted red peppers, red onion, and white balsamic vinaigrette. An Italian delight.",
+    image: "https://i.imgur.com/L4Yc3q5.jpg",
+  },
+  {
+    title: "Italian Salad",
+    description:
+      "filled with crisp lettuce, juicy tomatoes, olives, red onions and of course zesty pepperoncinis. We add in a simple homemade Italian vinaigrette for the perfect fresh salad.",
+    image: "https://i.imgur.com/3Wvwq0P.jpg",
+  },
+  {
+    title: "D",
+    description:
+      "D is for delicious! This sub boasts chicken cutlet, broccoli rabe, long hots, and melted fresh mozzarella cheese. A taste sensation",
+    image: "https://i.imgur.com/1ZILcrV.jpg",
+  },
+  {
+    title: "Ham, Egg, and Cheese",
+    description:
+      "Delicious breakfast sandwich with scrambled eggs, ham, and melted cheese on an English muffin.",
+    image: "https://i.imgur.com/idiXMCB.jpg",
+  },
+  {
+    title: "Sfogliatelle",
+    description:
+      "A classic Italian pastries with hundreds of buttery crisp and flaky layers; and a rich citrus and vanilla ricotta filling.",
+    image: "https://i.imgur.com/k5miIjn.jpg",
+  },
+  {
+    title: "Chicken Parm",
+    description:
+      "Classic chicken parm sub with a crispy chicken cutlet, marinara sauce, and melted mozzarella cheese on a fresh roll.",
+    image: "https://i.imgur.com/O9xMRIJ.jpg",
+  },
+];
+
+export { heroImages, galleryImages };
