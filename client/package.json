@@ -19,6 +19,12 @@
     "@apollo/client": "^3.5.8",
     "react-router-dom": "^6.2.1"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.30",
