@@ -1,11 +1,11 @@
-import Navbar from "../components/Header";
 import ContactForm from "../components/contactForm";
 
 const Contact = () => {
-  <>
-    <Navbar />
-    <ContactForm />
-  </>;
+  return (
+    <>
+      <ContactForm />
+    </>
+  );
 };
 
 export default Contact;

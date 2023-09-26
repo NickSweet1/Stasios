@@ -1,10 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Header/index";
+import Contact from "./pages/Contact.js";
+import Home from "./pages/Home.js";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p className="text-white">Hello world!</p>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
