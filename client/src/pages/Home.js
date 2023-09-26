@@ -1,5 +1,7 @@
+import Gallery from "../components/gallery";
+
 const Home = () => {
-  return <h1>Hello World</h1>;
+  return <Gallery />;
 };
 
 export default Home;
