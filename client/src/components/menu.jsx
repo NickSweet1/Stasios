@@ -10,8 +10,9 @@ const Menu = () => {
         <span className='border-b-4 border-white w-1/3 inline-block'></span>
         <span className='border-b-4 border-red-500 w-1/3 inline-block'></span>
         <span className='relative z-10 bg-white px-2 md:px-4'>Our Menu</span>
-        <br />
+        <div>
         <span className="text-sm text-gray-400">Sandwiches / Desserts / Delicacies</span> {/* Smaller and light grey */}
+        </div>
       </div>
       <div className='flex flex-col md:flex-row w-full'>
         <div className='w-full md:w-1/2 p-6'>
