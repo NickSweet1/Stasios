@@ -13,6 +13,9 @@ module.exports = {
         inside: "url('/src/assets/stasios-inside.png')",
         outside: "url('/src/assets/stasios-outside.png')",
       },
+      backgroundImage: {
+        bgMap: "url('/src/assets/contBG.png')",
+      },
     },
   },
   plugins: [],

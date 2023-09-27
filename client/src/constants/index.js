@@ -113,4 +113,10 @@ const aboutText = [
   },
 ];
 
-export { heroImages, galleryImages, aboutText };
+const mapImage = {
+  image: "https://i.imgur.com/w1tOolr.jpg",
+  description: "Map of Stacios",
+};
+
+export { heroImages, galleryImages, aboutText, mapImage};
+
