@@ -28,14 +28,14 @@ const NavBar = () => {
 
   return (
     <div
-      className='relative w-full h-80'
+      className='relative w-full h-56'
       style={{
         backgroundImage: `url(${BannerMap})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <div className='flex justify-between items-center relative w-full h-80 text-white'>
+      <div className='flex justify-between items-center relative w-full h-56 text-white'>
         <div>
           <img
             src={Logo}
