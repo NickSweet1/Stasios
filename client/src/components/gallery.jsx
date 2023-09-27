@@ -6,7 +6,11 @@ import { galleryImages } from "../constants";
 class Gallery extends React.Component {
   render() {
     return (
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
+      <div name="gallery">
+      <ResponsiveMasonry
+        
+        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
+      >
         <Masonry>
           {galleryImages.map((image, i) => (
             <img
@@ -19,6 +23,7 @@ class Gallery extends React.Component {
           ))}
         </Masonry>
       </ResponsiveMasonry>
+      </div>
     );
   }
 }
