@@ -13,7 +13,7 @@ const subSchema = new Schema({
         },
     ],
     price: {
-        type: Number
+        type: String
     }
 });
 
