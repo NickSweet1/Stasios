@@ -20,6 +20,7 @@
     "react-icons": "^4.11.0",
     "react-responsive-masonry": "^2.1.7",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
