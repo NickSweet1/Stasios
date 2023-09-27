@@ -4,6 +4,7 @@ import { Link } from 'react-scroll';
 import Logo from '../../assets/LogoStasios.png';
 import BannerMap from '../../assets/BannerMap.jpg';
 
+// Define an array of navigation links
 const links = [
   {
     id: 1,
@@ -24,6 +25,7 @@ const links = [
 ];
 
 const NavBar = () => {
+  // State to manage the visibility of the mobile navigation menu
   const [nav, setNav] = useState(false);
 
   return (
@@ -35,20 +37,30 @@ const NavBar = () => {
         backgroundPosition: 'center',
       }}
     >
-      <div className='flex justify-between items-center relative w-full h-56 text-white'>
+      {/* Text elements */}
+      <p className='absolute text-white text-[1.5rem] top-[2.3rem] inset-0 flex justify-center text-shadow-NavBar'>Pickup or Dine-In! 407-277-7755</p>
+      <p className='absolute text-white text-[1rem] top-[6.8rem] inset-0 flex justify-center items-center text-shadow-NavBar'>Stasio's Italian Deli & Market</p>
+      <p className='absolute text-white text-[1.2rem] top-[10rem] inset-0 flex justify-center items-center text-shadow-NavBar'>2320 E Robinson St, Orlando, FL 32803</p>
+      
+      {/* White Banner Background */}
+      <div className='fixed w-full h-20 top-[7rem] transform -translate-y-1/2 bg-white z-10 shadow-2xl opacity-90'></div>
+      
+      {/* Navigation elements */}
+      <div className='flex justify-between items-center fixed w-full h-56 z-20'>
         <div>
           <img
             src={Logo}
             alt=''
-            className='w-72 ml-20 shadow-lg' 
+            className='w-56 ml-20'
           />
         </div>
-
+        
+        {/* Desktop navigation links */}
         <ul className='hidden md:flex'>
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className='px-10 cursor-pointer capitalize font-medium text-white hover:scale-150 duration-200'
+              className='px-10 mr-20 ml-10 cursor-pointer capitalize text-red-950 hover:scale-150 duration-200 text-shadow-css text-2xl'
             >
               <Link to={link} smooth duration={500}>
                 {link}
@@ -57,20 +69,22 @@ const NavBar = () => {
           ))}
         </ul>
 
+        {/* Mobile menu toggle */}
         <div
           onClick={() => setNav(!nav)}
-          className='cursor-pointer pr-4 z-10 text-white md:hidden'
+          className='cursor-pointer pr-4 z-10 md:hidden text-red-950'
         >
           {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
         </div>
       </div>
 
+      {/* Mobile navigation menu */}
       {nav && (
-        <ul className='flex flex-col justify-center items-center absolute top-0 w-full h-screen bg-gradient-to-b from-gray-950 to-gray-900'>
+        <ul className='flex flex-col justify-center items-center absolute top-0 w-full h-screen bg-zinc-50 z-10 '>
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className='px-4 cursor-pointer capitalize py-6 text-4xl hover:scale-110 duration-200'
+              className='px-4 cursor-pointer capitalize py-[1.2rem] text-4xl hover:scale-110 duration-200 text-red-950'
             >
               <Link
                 onClick={() => setNav(!nav)}
@@ -89,3 +103,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
