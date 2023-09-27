@@ -8,6 +8,9 @@ module.exports = {
         sred: "#CE2B37", //stasios red
         sgreen: "#019246", //stasios green
       },
+      backgroundImage: {
+        bgMap: "url('/src/assets/contBG.png')",
+      },
     },
   },
   plugins: [],
