@@ -46,7 +46,11 @@ const ContactForm = () => {
   }
 
   return (
-    <form action={FORM_ENDPOINT} onSubmit={handleSubmit} method="POST">
+    <form
+      action={FORM_ENDPOINT}
+      onSubmit={handleSubmit}
+      method="POST"
+      className="w-[500px] ">
       <div className="pt-0 mb-3">
         <input
           type="text"

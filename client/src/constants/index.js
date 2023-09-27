@@ -119,4 +119,17 @@ const italyText = [
     image: "",
   },
 ];
-export { heroImages, galleryImages, aboutText, italyText, familyText };
+
+const mapImage = {
+  image: "https://i.imgur.com/w1tOolr.jpg",
+  description: "Map of Stacios",
+};
+
+export {
+  heroImages,
+  galleryImages,
+  aboutText,
+  italyText,
+  familyText,
+  mapImage,
+};
