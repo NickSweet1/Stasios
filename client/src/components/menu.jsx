@@ -36,7 +36,7 @@ const Menu = () => {
           <strong className='text-lg md:text-xl lg:text-2xl'>{item.subName}</strong>
           <p className='mt-2'>
             {item.ingredients}<br />
-            <em className='italic'>{item.price}</em>
+            <em className='italic'>${parseFloat(item.price).toFixed(2)}</em>
           </p>
         </div>
       </li>
@@ -50,7 +50,7 @@ const Menu = () => {
           <strong className='text-lg md:text-xl lg:text-2xl'>{item.subName}</strong>
           <p className='mt-2'>
             {item.ingredients}<br />
-            <em className='italic'>{item.price}</em>
+            <em className='italic'>${parseFloat(item.price).toFixed(2)}</em>
           </p>
         </div>
       </li>
