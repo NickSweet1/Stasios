@@ -118,5 +118,4 @@ const mapImage = {
   description: "Map of Stacios",
 };
 
-export { heroImages, galleryImages, aboutText, mapImage};
-
+export { heroImages, galleryImages, aboutText, mapImage };
