@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Leckerli+One&family=Libre+Baskerville&family=Raleway:wght@100&display=swap');
+
+@layer base{
+  html{
+    font-family: 'Raleway', sans-serif;
+  }
+  }
+
+  .text-shadow-css {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.299);
+  }
+
+  .text-shadow-NavBar {
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+  }
