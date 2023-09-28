@@ -41,7 +41,10 @@ const NavBar = (section) => {
   // }
 
   // Check if the URL ends with "/contact" and the section is one of "gallery," "about," or "menu"
-  if (location.pathname.endsWith("/contact") && ["gallery", "about", "menu"].includes(section)) {
+  if (
+    location.pathname.endsWith("/contact") &&
+    ["gallery", "about", "menu"].includes(section)
+  ) {
     // If it ends with "/contact" and the section is one of the specified ones, navigate to the home page
     navigate("/");
   } else if (section === "contact") {
@@ -94,6 +97,7 @@ const NavBar = (section) => {
         });
       }
     }
+    setNav(false);
   };
 
   return (
@@ -176,7 +180,7 @@ const NavBar = (section) => {
                 <a href="/contact">{link}</a>
               ) : (
                 <Link
-                  onClick={() => setNav(!nav)}
+                  onClick={handleSectionClick}
                   to={link}
                   smooth
                   duration={500}
