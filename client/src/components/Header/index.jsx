@@ -40,6 +40,25 @@ const NavBar = (section) => {
   //   navigate("/contact");
   // }
 
+  // Check if the URL ends with "/contact" and the section is one of "gallery," "about," or "menu"
+  if (location.pathname.endsWith("/contact") && ["gallery", "about", "menu"].includes(section)) {
+    // If it ends with "/contact" and the section is one of the specified ones, navigate to the home page
+    navigate("/");
+  } else if (section === "contact") {
+    // If the section link is "contact," navigate to the "/contact" page
+    navigate("/contact");
+  } else {
+    // Otherwise, scroll to the section on the same page
+    const targetSection = document.getElementById(section);
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "nearest",
+      });
+    }
+  }
+
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setScrolling(true);
