@@ -35,24 +35,28 @@ const Contact = () => {
         <p className="text-center py-8"></p>
         <div className="grid sm:grid-cols-2 gap-12">
           <div className="grid grid-cols-2 items-center bg-white opacity-80 text-amber-950  rounded-2xl drop-shadow-2xl">
-            <p className="p-9">
+            <p className="p-9 font-semibold">
               <span className="font-bold text-2xl">Phone:</span>
               <br></br> (407) 277-7755
             </p>
-            <p className="p-4">
+            <p className="p-4 font-semibold">
               <span className="font-bold text-2xl">Email:</span>
               <br></br> stacios@stacios.com
             </p>
             <div className="pt-2">
-              <p className="pl-9">
-                <span className="font-bold text-[1.3rem]">Physical Address:</span>
+              <p className="pl-9 font-semibold">
+                <span className="font-bold text-[1.3rem]">
+                  Physical Address:
+                </span>
                 <br></br>
                 2320 E Robinson St, <br></br>Orlando, FL 32803
               </p>
             </div>
             <div className="pt-2">
-              <p className="pl-4">
-                <span className="font-bold text-[1.3rem]">Mailing Address:</span>
+              <p className="pl-4 font-semibold">
+                <span className="font-bold text-[1.3rem]">
+                  Mailing Address:
+                </span>
                 <br></br>
                 2320 E Robinson St, <br></br>Orlando, FL 32803
               </p>
@@ -81,7 +85,8 @@ const Contact = () => {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute inset-0 flex items-center justify-center bg-lightgray opacity-75 hover:bg-black transition-opacity duration-300">
+              className="absolute inset-0 flex items-center justify-center bg-lightgray opacity-75 hover:bg-black transition-opacity duration-300"
+            >
               <div className="text-white text-center opacity-0 transition-opacity duration-300">
                 <p className="text-5xl">Come and visit</p>
               </div>
