@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Caffè",
+        "price": "3.00"
+    },
+    {
+        "name": "Caffè Doppio",
+        "price": "4.00"
+    },
+    {
+        "name": "Cappuccino",
+        "price": "4.00"
+    },
+    {
+        "name": "Caffè Latte",
+        "price": "3.5"
+    },
+    {
+        "name": "Americano",
+        "price": "3.00"
+    },
+    {
+        "name": "Macchiato",
+        "price": "4.00"
+    },
+    {
+        "name": "Caffè Affogato",
+        "price": "5.50"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Biscotti",
+        "price": "4.95"
+    },
+    {
+        "name": "Tiramisù",
+        "price": "5.00"
+    },
+    {
+        "name": "Cannoli",
+        "price": "3.50"
+    },
+    {
+        "name": "Panettone",
+        "price": "4.00"
+    },
+    {
+        "name": "Napoletano",
+        "price": "5.00"
+    },
+    {
+        "name": "Bussolai",
+        "price": "3.50"
+    },
+    {
+        "name": "Sfogliatelle",
+        "price": "5.00"
+    }
+]
