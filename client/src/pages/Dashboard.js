@@ -117,7 +117,9 @@ const Menu = () => {
   const firstHalf = menuItems.slice(0, midpoint);
   const secondHalf = menuItems.slice(midpoint);
 
-  const handleDeleteMenuItem = (itemId) => {
+  const handleDeleteMenuItem = (itemId, subName) => {
+    const userConfirmed = window.confirm(`Are you sure you want to delete this sub?`);
+    if (userConfirmed) {
     console.log(itemId);
     deleteMenuItem({
       variables: { _id: itemId },
@@ -129,6 +131,7 @@ const Menu = () => {
       .catch((error) => {
         console.error("Error deleting menu item:", error);
       });
+    }
   };
 
   const renderFirstMenuItems = () => {
