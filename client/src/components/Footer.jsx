@@ -3,6 +3,8 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="flex flex-col items-center bg-amber-950 text-center text-white opacity-80">
+       <div className="pt-0 mb-3 flex justify-center">
+      </div>
       <div className="container pt-9">
         <div className="mb-9 flex justify-center">
           <a href="https://www.facebook.com/p/Stasios-Italian-deli-100063550872193/" target="_blank" rel="noreferrer" className="mr-9 text-neutral-800 dark:text-neutral-200">
@@ -34,10 +36,14 @@ const Footer = () => {
           </a>
         </div>
       </div>
-
       {/* Copyright section */}
-      <div className="flex justify-center w-full p-4 bg-yellow-950 text-white mr-9">
+      <div className="flex justify-center w-full p-6  bg-yellow-950 text-white mr-9">
         © 2023 Stasios Italian Deli
+        <button
+          className="hover:shadow-lg ml-1 mt-4 text-xl absolute font-bold text-white drop-shadow-2xl"
+          type="submit">
+          Login
+        </button>
       </div>
     </footer>
   );
