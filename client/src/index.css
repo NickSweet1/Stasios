@@ -9,6 +9,9 @@
   html{
     font-family: 'Raleway', sans-serif;
   }
+  body{
+    background-image: url('./assets/EB4BABF8-A253-4D51-9F0A-71C47D6DA50C.jpeg');
+  }
   }
 
   .text-shadow-css {
