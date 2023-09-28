@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_SUBS } from "../utils/queries";
-import { DELETE_MENU_ITEM, EDIT_MENU_ITEM } from "../utils/mutations";
+import {
+  DELETE_MENU_ITEM,
+  EDIT_MENU_ITEM,
+  ADD_MENU_ITEM,
+} from "../utils/mutations";
 
 const EditForm = ({ item, onCancel, onSubmit }) => {
   const [editMenuItem] = useMutation(EDIT_MENU_ITEM);
@@ -77,6 +81,80 @@ const EditForm = ({ item, onCancel, onSubmit }) => {
         <button type="button" onClick={onCancel}>
           Cancel
         </button>
+      </form>
+    </div>
+  );
+};
+
+const AddForm = ({ item, onCancel, onSubmit }) => {
+  const [addMenuItem] = useMutation(ADD_MENU_ITEM);
+
+  const [addedItem, setAddedItem] = useState({
+    subName: "",
+    ingredients: "",
+    price: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAddedItem({ ...addedItem, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(addedItem);
+    addMenuItem({
+      variables: {
+        subName: addedItem.subName,
+        ingredients: addedItem.ingredients,
+        price: addedItem.price,
+      },
+      refetchQueries: [{ query: QUERY_SUBS }],
+    })
+      .then(() => {
+        console.log("Menu item added successfully");
+      })
+      .catch((error) => {
+        console.error("Error adding menu item:", error);
+      });
+    // onSubmit(addedItem);
+  };
+
+  return (
+    <div className="bg-gray-200 rounded p-4 mt-4">
+      <h2>Add Menu Item</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Sub Name:
+          <input
+            type="text"
+            name="subName"
+            value={addedItem.subName}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Ingredients (comma-separated):
+          <input
+            type="text"
+            name="ingredients"
+            value={addedItem.ingredients}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Price(ex: 00.00):
+          <input
+            type="number"
+            name="price"
+            value={addedItem.price}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <button type="submit">Save Changes</button>
       </form>
     </div>
   );
@@ -243,6 +321,7 @@ const Dashboard = () => {
     <>
       <div>
         <Menu />
+        <AddForm />
       </div>
     </>
   );
