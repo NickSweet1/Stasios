@@ -99,7 +99,7 @@ const aboutText = [
   },
   {
     title: "A Family Legacy",
-    body: "Stasio's Italian Deli & Market is more than just a restaurant; it's a family legacy. We're proud to be a family-owned establishment, and our Italian classics have been passed down through generations. With each meal, you are not just a customer; you're an extension of our family.",
+    body: "Stasio's Italian Deli & Market is more than just a restaurant; it's a family legacy. We're a proud family-owned establishment, and our Italian classics have been passed down through generations. With each meal, you are not just a customer; you're an extension of our family.",
     image: "https://i.imgur.com/dAfLeS7.jpg",
   },
   {
