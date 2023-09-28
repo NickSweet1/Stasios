@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Sub {
@@ -37,11 +37,10 @@ const typeDefs = gql`
   type Mutation {
     login(name: String, pin: String!): Auth
     addSub(subName: String!, ingredients: String!, price: Int!): Sub
-    removeSub(_id: String!): Sub
-    editSub(subName: String!, ingredients: [String], price: Int): Sub
+    removeSub(_id: ID!): Sub
+    editSub(_id: ID!, subName: String!, ingredients: [String], price: Int): Sub
     addContact(name: String!, email: String!, message: String!): Contact
   }
-
 `;
 
 module.exports = typeDefs;
