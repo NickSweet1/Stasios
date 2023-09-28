@@ -106,6 +106,7 @@ const NavBar = (section) => {
           scrolling ? "top-[-4.5rem]" : "top-[0rem]"
         } transition-top duration-[400ms] ease-in-out`}
       >
+        
         <div>
           <img src={Logo} alt="logo" className="w-56 ml-20 opacity-100" />
         </div>

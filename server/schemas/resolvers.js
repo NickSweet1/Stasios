@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Sub, User } = require("../models");
+const { Sub, User, Contact } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -19,7 +19,9 @@ const resolvers = {
     user: async (parent, { pin }) => {
       return User.findOne({ pin });
     },
-
+    contacts: async () => {
+      return Contact.find();
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
@@ -40,19 +42,17 @@ const resolvers = {
 
       return sub;
     },
-    removeSub: async (parent, { subName }) => {
-      const error = await Sub.findOne({ subName });
+    removeSub: async (parent, { _id }) => {
+      const sub = await Sub.findOne({ _id });
 
-      if (!error) {
-        throw new Error(
-          `No sub by the name of ${subName} has been found. Please try to process your request again.`
-        );
+      if (!sub) {
+        throw new Error(`No sub with ID ${_id} found.`);
       } else {
-        const sub = await Sub.deleteOne({ subName });
-        console.log(`Sub ${subName} has been deleted`);
+        await Sub.deleteOne({ _id });
+        console.log(`Sub ${_id} has been deleted`);
         return sub;
       }
-    },
+      },
     editSub: async (parent, { subName, ingredients, price }) => {
       const sub = await Sub.findOne({ subName });
       
@@ -72,7 +72,11 @@ const resolvers = {
         const updatedSub = await sub.save();
 
         return updatedSub;
-      }
+      },
+      addContact: async (parent, { name, email, message }) => {
+        const contact = await Contact.create({ name, email, message });
+        return contact; 
+      },
     }
   };
 
