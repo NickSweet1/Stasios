@@ -58,7 +58,7 @@ const Menu = () => {
   };
 
   return (
-    <div name='menu' className='bg-white rounded-xl items-center min-h-screen max-h-3/4 relative mb-4 p-4 sm:mt-[13rem] px-4 max-w-[1500px] mx-auto text-amber-950'>
+    <div name='menu' className='bg-white rounded-xl items-center min-h-screen max-h-3/4 relative mb-4 p-4 mt-[13rem] px-4 max-w-[1500px] mx-auto text-amber-950'>
       {/* Add a small top border */}
       <div className='w-full md:w-px bg-gray-300 h-1 mt-4'></div>
       <div className='text-3xl md:text-5xl lg:text-6xl text-center mb-6 relative'>
