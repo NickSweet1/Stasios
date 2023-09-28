@@ -1,12 +1,13 @@
 import React from 'react';
 import map from '../assets/othermap.jpg';
 
+//
 const mapsection = () => {
   const googleMapsUrl =
     'https://maps.app.goo.gl/h8BBESCTktpj1waP6';
 
   return (
-    <div className='relative min-h-screen'>
+    <div className='relative min-h-screen z-2 mt-[-20px]'>
       {/* Dark overlay with text */}
       <a
         href={googleMapsUrl}
@@ -31,7 +32,6 @@ const mapsection = () => {
           }
         `}
       </style>
-
       <img
         src={map}
         alt="map"
