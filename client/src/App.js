@@ -3,6 +3,7 @@ import Navbar from "./components/Header/index";
 import Contact from "./pages/Contact.js";
 import Home from "./pages/Home.js";
 import Footer from "./components/Footer";
+import Dahsboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/dashboard" element={<Dahsboard />} />
         </Routes>
       </Router>
       <Footer />
