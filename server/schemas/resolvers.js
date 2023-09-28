@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Sub, User } = require("../models");
+const { Sub, User, Contact } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -19,7 +19,9 @@ const resolvers = {
     user: async (parent, { pin }) => {
       return User.findOne({ pin });
     },
-
+    contacts: async () => {
+      return Contact.find();
+    },
     me: async (parent, args, context) => {
       if (context.user) {
         return User.findOne({ _id: context.user._id });
@@ -72,7 +74,11 @@ const resolvers = {
         const updatedSub = await sub.save();
 
         return updatedSub;
-      }
+      },
+      addContact: async (parent, { name, email, message }) => {
+        const contact = await Contact.create({ name, email, message });
+        return contact; 
+      },
     }
   };
 
