@@ -39,7 +39,7 @@ const ContactForm = () => {
   if (submitted) {
     return (
       <>
-        <div className="text-2xl">Thank you!</div>
+        <div className="text-2xl ">Thank you!</div>
         <div className="text-md">We'll be in touch soon.</div>
       </>
     );
@@ -56,7 +56,7 @@ const ContactForm = () => {
           type="text"
           placeholder="Your name"
           name="name"
-          className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-400 bg-white border-0 rounded shadow outline-none"
+          className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-amber-950 bg-white border-0 rounded text-shadow-css outline-none drop-shadow-2xl"
           required
         />
       </div>
@@ -65,7 +65,7 @@ const ContactForm = () => {
           type="email"
           placeholder="Email"
           name="email"
-          className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-400 bg-white border-0 rounded shadow outline-none"
+          className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-amber-950 bg-white border-0 rounded text-shadow-css outline-none drop-shadow-2xl"
           required
         />
       </div>
@@ -73,13 +73,13 @@ const ContactForm = () => {
         <textarea
           placeholder="Your message"
           name="message"
-          className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-gray-400 bg-white border-0 rounded shadow outline-none"
+          className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-amber-950 bg-white border-0 rounded text-shadow-css outline-none drop-shadow-2xl"
           required
         />
       </div>
-      <div className="pt-0 mb-3">
+      <div className="pt-0 mb-3 flex justify-center">
         <button
-          className="hover:shadow-lg focus:outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-white bg-gray-600 uppercase transition-all duration-150 ease-linear rounded shadow outline-none"
+          className="hover:shadow-lg focus:outline-none px-6 py-3 mb-1 mr-1 text-sm font-bold text-white bg-amber-950 uppercase transition-all duration-150 ease-linear rounded drop-shadow-2xl outline-none"
           type="submit">
           Send a message
         </button>

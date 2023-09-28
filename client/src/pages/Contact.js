@@ -23,36 +23,36 @@ const Contact = () => {
   return (
     <>
       <div className="flex m-auto pt-16 justify-center items-center">
-        <div className="flex w-[500px] bg-bgMap bg-center h-16 justify-center items-center rounded-full">
+        <div className="flex w-[500px] bg-bgMap bg-center h-16 justify-center items-center rounded-2xl drop-shadow-2xl">
           <h1 className="font-bold text-[3.4rem] text-left">
             <span className="text-white drop-shadow-2xl bg-[#019246]">CO</span>
-            <span className="text-black drop-shadow-2xl bg-white">NTA</span>
+            <span className="text-amber-950 drop-shadow-2xl bg-white">NTA</span>
             <span className="text-white drop-shadow-2xl bg-[#CE2B37]">CT</span>
           </h1>
         </div>
       </div>
-      <div className="max-w-[1040px] m-auto md:pl-20 p-4 py-6">
+      <div className="max-w-[1040px] m-auto md:pl-20 p-4 py-6 text-shadow-css">
         <p className="text-center py-8"></p>
         <div className="grid sm:grid-cols-2 gap-12">
-          <div className="grid grid-cols-2 items-center">
-            <p className="">
-              <span className="font-bold">Phone:</span>
+          <div className="grid grid-cols-2 items-center bg-white opacity-80 text-amber-950  rounded-2xl drop-shadow-2xl">
+            <p className="p-9">
+              <span className="font-bold text-2xl">Phone:</span>
               <br></br> (407) 277-7755
             </p>
-            <p className="">
-              <span className="font-bold">Email:</span>
+            <p className="p-4">
+              <span className="font-bold text-2xl">Email:</span>
               <br></br> stacios@stacios.com
             </p>
-            <div className="pt-6">
-              <p className="">
-                <span className="font-bold">Physical Address:</span>
+            <div className="pt-2">
+              <p className="pl-9">
+                <span className="font-bold text-[1.3rem]">Physical Address:</span>
                 <br></br>
                 2320 E Robinson St, <br></br>Orlando, FL 32803
               </p>
             </div>
-            <div className="pt-6">
-              <p className="">
-                <span className="font-bold">Mailing Address:</span>
+            <div className="pt-2">
+              <p className="pl-4">
+                <span className="font-bold text-[1.3rem]">Mailing Address:</span>
                 <br></br>
                 2320 E Robinson St, <br></br>Orlando, FL 32803
               </p>
@@ -60,17 +60,17 @@ const Contact = () => {
             <div className="flex col-span-2 items-center justify-center py-6 space-x-8">
               <FaFacebookF
                 onClick={fbNav}
-                className="cursor-pointer hover:scale-110 ease-in duration-200"
+                className="cursor-pointer hover:scale-150 ease-in duration-300"
                 size={30}
               />
               <FaInstagram
                 onClick={igNav}
-                className="cursor-pointer hover:scale-110 ease-in duration-200 pl"
+                className="cursor-pointer hover:scale-150 ease-in duration-300"
                 size={30}
               />
               <FaYelp
                 onClick={yelpNav}
-                className="cursor-pointer hover:scale-110 ease-in duration-200"
+                className="cursor-pointer hover:scale-150 ease-in duration-300"
                 size={30}
               />
             </div>
@@ -103,7 +103,7 @@ const Contact = () => {
             <img
               src={map}
               alt="map"
-              className="w-full h-[300px] object-cover hover:scale-110"
+              className="w-full h-[300px] object-cover hover:scale-110 ease-in duration-200 rounded-2xl drop-shadow-2xl"
             />
           </div>
         </div>
