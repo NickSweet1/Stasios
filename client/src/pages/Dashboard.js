@@ -9,7 +9,7 @@ const EditForm = ({ item, onCancel, onSubmit }) => {
   const [editedItem, setEditedItem] = useState({
     _id: item._id,
     subName: item.subName,
-    ingredients: item.ingredients.join(", "),
+    ingredients: item.ingredients,
     price: item.price,
   });
 
@@ -25,14 +25,13 @@ const EditForm = ({ item, onCancel, onSubmit }) => {
       variables: {
         _id: editedItem._id,
         subName: editedItem.subName,
-        ingredients: editedItem.ingredients.split(","),
-        price: parseFloat(editedItem.price),
+        ingredients: editedItem.ingredients,
+        price: editedItem.price,
       },
       refetchQueries: [{ query: QUERY_SUBS }],
     })
       .then(() => {
         console.log("Menu item edited successfully");
-        setEditedItem(null);
       })
       .catch((error) => {
         console.error("Error editing menu item:", error);
@@ -86,7 +85,6 @@ const EditForm = ({ item, onCancel, onSubmit }) => {
 const Menu = () => {
   const { data, loading, error } = useQuery(QUERY_SUBS);
   const [deleteMenuItem] = useMutation(DELETE_MENU_ITEM);
-  const [editMenuItem] = useMutation(EDIT_MENU_ITEM);
 
   const handleEditMenuItem = (itemId) => {
     setEditItemId(itemId);
@@ -240,7 +238,7 @@ const Menu = () => {
   );
 };
 
-const Dahsboard = () => {
+const Dashboard = () => {
   return (
     <>
       <div>
@@ -249,4 +247,4 @@ const Dahsboard = () => {
     </>
   );
 };
-export default Dahsboard;
+export default Dashboard;

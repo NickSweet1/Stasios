@@ -12,8 +12,8 @@ export const EDIT_MENU_ITEM = gql`
   mutation editSub(
     $_id: ID!
     $subName: String!
-    $ingredients: [String]
-    $price: Int
+    $ingredients: String
+    $price: String
   ) {
     editSub(
       _id: $_id
