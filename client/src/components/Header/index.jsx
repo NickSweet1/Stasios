@@ -31,14 +31,14 @@ const NavBar = (section) => {
   const navigate = useNavigate(); // Get the navigate function
   const location = useLocation(); // Get the current location
 
-  // Check if the URL ends with "/contact"
-  if (location.pathname.endsWith("/contact")) {
-    // If it does, navigate to the home page
-    navigate("/");
-  } else if (section === "contact") {
-    // If the section link is "contact," navigate to the "/contact" page
-    navigate("/contact");
-  }
+  // // Check if the URL ends with "/contact"
+  // if (location.pathname.endsWith("/contact")) {
+  //   // If it does, navigate to the home page
+  //   navigate("/");
+  // } else if (section === "contact") {
+  //   // If the section link is "contact," navigate to the "/contact" page
+  //   navigate("/contact");
+  // }
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -106,7 +106,6 @@ const NavBar = (section) => {
           scrolling ? "top-[-4.5rem]" : "top-[0rem]"
         } transition-top duration-[400ms] ease-in-out`}
       >
-        
         <div>
           <img src={Logo} alt="logo" className="w-56 ml-20 opacity-100" />
         </div>
