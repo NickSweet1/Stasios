@@ -7,3 +7,24 @@ export const DELETE_MENU_ITEM = gql`
     }
   }
 `;
+
+export const EDIT_MENU_ITEM = gql`
+  mutation editSub(
+    $_id: ID!
+    $subName: String!
+    $ingredients: [String]
+    $price: Int
+  ) {
+    editSub(
+      _id: $_id
+      subName: $subName
+      ingredients: $ingredients
+      price: $price
+    ) {
+      _id
+      subName
+      ingredients
+      price
+    }
+  }
+`;

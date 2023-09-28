@@ -38,7 +38,7 @@ const typeDefs = gql`
     login(name: String, pin: String!): Auth
     addSub(subName: String!, ingredients: String!, price: Int!): Sub
     removeSub(_id: ID!): Sub
-    editSub(subName: String!, ingredients: [String], price: Int): Sub
+    editSub(_id: ID!, subName: String!, ingredients: [String], price: Int): Sub
     addContact(name: String!, email: String!, message: String!): Contact
   }
 `;

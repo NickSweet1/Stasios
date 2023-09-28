@@ -1,18 +1,108 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_SUBS } from "../utils/queries";
-import { DELETE_MENU_ITEM } from "../utils/mutations";
+import { DELETE_MENU_ITEM, EDIT_MENU_ITEM } from "../utils/mutations";
+
+const EditForm = ({ item, onCancel, onSubmit }) => {
+  const [editMenuItem] = useMutation(EDIT_MENU_ITEM);
+
+  const [editedItem, setEditedItem] = useState({
+    _id: item._id,
+    subName: item.subName,
+    ingredients: item.ingredients.join(", "),
+    price: item.price,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEditedItem({ ...editedItem, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(editedItem);
+    editMenuItem({
+      variables: {
+        _id: editedItem._id,
+        subName: editedItem.subName,
+        ingredients: editedItem.ingredients.split(","),
+        price: parseFloat(editedItem.price),
+      },
+      refetchQueries: [{ query: QUERY_SUBS }],
+    })
+      .then(() => {
+        console.log("Menu item edited successfully");
+        setEditedItem(null);
+      })
+      .catch((error) => {
+        console.error("Error editing menu item:", error);
+      });
+    onSubmit(editedItem);
+  };
+
+  return (
+    <div className="bg-gray-200 rounded p-4 mt-4">
+      <h2>Edit Menu Item</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Sub Name:
+          <input
+            type="text"
+            name="subName"
+            value={editedItem.subName}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Ingredients (comma-separated):
+          <input
+            type="text"
+            name="ingredients"
+            value={editedItem.ingredients}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Price:
+          <input
+            type="number"
+            name="price"
+            value={editedItem.price}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <button type="submit">Save Changes</button>
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
+      </form>
+    </div>
+  );
+};
 
 const Menu = () => {
-  // Use the useQuery hook to fetch data and handle errors
   const { data, loading, error } = useQuery(QUERY_SUBS);
   const [deleteMenuItem] = useMutation(DELETE_MENU_ITEM);
+  const [editMenuItem] = useMutation(EDIT_MENU_ITEM);
+
+  const handleEditMenuItem = (itemId) => {
+    setEditItemId(itemId);
+  };
+
+  const handleCancelEdit = () => {
+    setEditItemId(null);
+  };
+  const handleEditFormSubmit = (editedItem) => {};
+
+  const [editItemId, setEditItemId] = useState(null);
 
   if (loading) {
     return <p>Loading...</p>;
   }
 
-  // Handle GraphQL query errors
   if (error) {
     console.error("GraphQL Error:", error);
     return (
@@ -22,9 +112,7 @@ const Menu = () => {
     );
   }
 
-  // Assuming your GraphQL query returns an array of menu items
   const menuItems = data.subs;
-
   const midpoint = Math.ceil(menuItems.length / 2);
 
   // Split the menuItems array into two separate arrays
@@ -54,6 +142,7 @@ const Menu = () => {
             className="text-red-500 font-bold">
             X
           </button>
+
           <strong className="text-lg md:text-xl lg:text-2xl">
             {item.subName}
           </strong>
@@ -62,6 +151,18 @@ const Menu = () => {
             <br />
             <em className="italic">${parseFloat(item.price).toFixed(2)}</em>
           </p>
+          <button
+            onClick={() => handleEditMenuItem(item._id)}
+            className="text-blue-500 font-bold">
+            Edit
+          </button>
+          {editItemId === item._id && (
+            <EditForm
+              item={menuItems.find((item) => item._id === editItemId)}
+              onCancel={handleCancelEdit}
+              onSubmit={handleEditFormSubmit}
+            />
+          )}
         </div>
       </li>
     ));
@@ -84,6 +185,18 @@ const Menu = () => {
             <br />
             <em className="italic">${parseFloat(item.price).toFixed(2)}</em>
           </p>
+          <button
+            onClick={() => handleEditMenuItem(item._id)}
+            className="text-blue-500 font-bold">
+            Edit
+          </button>
+          {editItemId === item._id && (
+            <EditForm
+              item={menuItems.find((item) => item._id === editItemId)}
+              onCancel={handleCancelEdit}
+              onSubmit={handleEditFormSubmit}
+            />
+          )}
         </div>
       </li>
     ));
