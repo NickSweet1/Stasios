@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate and useLocation
 import Logo from "../../assets/LogoStasios.png";
 import BannerMap from "../../assets/BannerMap.jpg";
 
@@ -23,9 +24,21 @@ const links = [
   },
 ];
 
-const NavBar = () => {
+const NavBar = (section) => {
   const [nav, setNav] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+
+  const navigate = useNavigate(); // Get the navigate function
+  const location = useLocation(); // Get the current location
+
+  // Check if the URL ends with "/contact"
+  if (location.pathname.endsWith("/contact")) {
+    // If it does, navigate to the home page
+    navigate("/");
+  } else if (section === "contact") {
+    // If the section link is "contact," navigate to the "/contact" page
+    navigate("/contact");
+  }
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
@@ -42,6 +55,27 @@ const NavBar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleSectionClick = (section) => {
+    // Check if the URL ends with "/contact"
+    if (location.pathname.endsWith("/contact")) {
+      // If it does, navigate to the home page
+      navigate("/");
+    } else if (section === "contact") {
+      // If the section link is "contact," navigate to the "/contact" page
+      navigate("/contact");
+    } else {
+      // Otherwise, scroll to the section on the same page
+      const targetSection = document.getElementById(section);
+      if (targetSection) {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest",
+        });
+      }
+    }
+  };
 
   return (
     <div
@@ -83,9 +117,24 @@ const NavBar = () => {
               key={id}
               className="px-10 mr-20 ml-10 cursor-pointer capitalize text-red-950 hover:scale-150 duration-200 text-shadow-css text-2xl"
             >
-              <Link to={link} smooth duration={500}>
-                {link}
-              </Link>
+              <span
+                onClick={() => handleSectionClick(link)} // Call the updated function
+                style={{ cursor: "pointer" }}
+              >
+                {link === "contact" ? (
+                  <a href="/contact">{link}</a>
+                ) : (
+                  <Link
+                    onClick={handleSectionClick}
+                    to={link}
+                    smooth={true}
+                    duration={500}
+                    offset={-56} // You may need to adjust this offset based on your layout
+                  >
+                    {link}
+                  </Link>
+                )}
+              </span>
             </li>
           ))}
         </ul>
@@ -105,14 +154,18 @@ const NavBar = () => {
               key={id}
               className="px-4 cursor-pointer capitalize py-[2rem] text-4xl hover:scale-110 duration-200 text-red-950"
             >
-              <Link
-                onClick={() => setNav(!nav)}
-                to={link}
-                smooth
-                duration={500}
-              >
-                {link}
-              </Link>
+              {link === "contact" ? (
+                <a href="/contact">{link}</a>
+              ) : (
+                <Link
+                  onClick={() => setNav(!nav)}
+                  to={link}
+                  smooth
+                  duration={500}
+                >
+                  {link}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
