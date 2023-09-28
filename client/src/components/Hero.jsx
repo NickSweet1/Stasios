@@ -30,7 +30,7 @@ const Hero = () => {
           }}
         />
       ))}
-      <MenuNav />
+      <MenuNav className="hs-menu-nav" />
     </HeroSlider>
   );
 };

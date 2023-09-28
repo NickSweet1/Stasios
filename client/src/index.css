@@ -21,3 +21,8 @@
   .text-shadow-NavBar {
     text-shadow: 2px 2px 4px rgb(0, 0, 0);
   }
+  .hs-menu-nav {
+    background: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+    color: black; /* Black text */
+    font-weight: bold; /* Bold font */
+  }
