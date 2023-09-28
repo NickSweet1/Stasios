@@ -42,19 +42,17 @@ const resolvers = {
 
       return sub;
     },
-    removeSub: async (parent, { subName }) => {
-      const error = await Sub.findOne({ subName });
+    removeSub: async (parent, { _id }) => {
+      const sub = await Sub.findOne({ _id });
 
-      if (!error) {
-        throw new Error(
-          `No sub by the name of ${subName} has been found. Please try to process your request again.`
-        );
+      if (!sub) {
+        throw new Error(`No sub with ID ${_id} found.`);
       } else {
-        const sub = await Sub.deleteOne({ subName });
-        console.log(`Sub ${subName} has been deleted`);
+        await Sub.deleteOne({ _id });
+        console.log(`Sub ${_id} has been deleted`);
         return sub;
       }
-    },
+      },
     editSub: async (parent, { subName, ingredients, price }) => {
       const sub = await Sub.findOne({ subName });
       
