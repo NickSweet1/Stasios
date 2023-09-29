@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from '../components/modal'
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <footer className="flex flex-col items-center bg-amber-950 text-center text-white opacity-80">
+      {isOpen && <Modal setIsOpen={setIsOpen} />}
        <div className="pt-0 mb-3 flex justify-center">
       </div>
       <div className="container pt-9">
@@ -40,7 +43,8 @@ const Footer = () => {
       <div className="flex justify-center w-full p-6  bg-yellow-950 text-white mr-9">
         © 2023 Stasios Italian Deli
         <button
-          className="hover:shadow-lg ml-1 mt-4 text-xl absolute font-bold text-white drop-shadow-2xl"
+          onClick={() => setIsOpen(true)}
+          className="hover:shadow-lg ml-1 mt-4 text-xl absolute font-bold text-white opacity-10  drop-shadow-2xl"
           type="submit">
           Login
         </button>
