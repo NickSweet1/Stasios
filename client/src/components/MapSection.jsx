@@ -7,7 +7,7 @@ const mapsection = () => {
     'https://maps.app.goo.gl/h8BBESCTktpj1waP6';
 
   return (
-    <div className='relative min-h-screen z-2 mt-[-20px]'>
+    <div className='relative min-h-screen z-2 mt-[-15rem]'>
       {/* Dark overlay with text */}
       <a
         href={googleMapsUrl}
