@@ -1,61 +1,61 @@
 import React, { useState } from "react";
-
-const FORM_ENDPOINT = ""; // TODO - update to the correct endpoint
+import { ADD_COMMENT } from "../utils/mutations";
+import { useMutation } from "@apollo/client";
 
 const ContactForm = () => {
+  const [addComment] = useMutation(ADD_COMMENT);
+
   const [submitted, setSubmitted] = useState(false);
+
+  const [addedComment, setAddedComment] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAddedComment({ ...addedComment, [name]: value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    const inputs = e.target.elements;
-    const data = {};
-
-    for (let i = 0; i < inputs.length; i++) {
-      if (inputs[i].name) {
-        data[inputs[i].name] = inputs[i].value;
-      }
-    }
-
-    fetch(FORM_ENDPOINT, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+    console.log(addedComment);
+    addComment({
+      variables: {
+        name: addedComment.name,
+        email: addedComment.email,
+        message: addedComment.message,
       },
-      body: JSON.stringify(data),
     })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Form response was not ok");
-        }
-
+      .then(() => {
+        console.log("Comment added successfully");
         setSubmitted(true);
       })
-      .catch((err) => {
-        e.target.submit();
+      .catch((error) => {
+        console.error("Error adding comment:", error);
       });
   };
 
   if (submitted) {
     return (
       <>
-        <div className="text-2xl ">Thank you!</div>
-        <div className="text-md">We'll be in touch soon.</div>
+        <div className="text-4xl bg-white rounded-lg bg-opacity-70 ">
+          Thank you! We'll be in touch soon.
+        </div>
       </>
     );
   }
 
   return (
-    <form
-      action={FORM_ENDPOINT}
-      onSubmit={handleSubmit}
-      method="POST"
-      className="w-[500px] ">
+    <form onSubmit={handleSubmit} method="POST" className="w-[500px] ">
       <div className="pt-0 mb-3">
         <input
           type="text"
           placeholder="Your name"
           name="name"
+          value={addedComment.name}
+          onChange={handleChange}
           className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-amber-950 bg-white border-0 rounded text-shadow-css outline-none drop-shadow-2xl"
           required
         />
@@ -65,6 +65,8 @@ const ContactForm = () => {
           type="email"
           placeholder="Email"
           name="email"
+          value={addedComment.email}
+          onChange={handleChange}
           className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-amber-950 bg-white border-0 rounded text-shadow-css outline-none drop-shadow-2xl"
           required
         />
@@ -73,6 +75,8 @@ const ContactForm = () => {
         <textarea
           placeholder="Your message"
           name="message"
+          value={addedComment.message}
+          onChange={handleChange}
           className="focus:outline-none focus:ring relative w-full px-3 py-3 text-sm text-gray-600 placeholder-amber-950 bg-white border-0 rounded text-shadow-css outline-none drop-shadow-2xl"
           required
         />
