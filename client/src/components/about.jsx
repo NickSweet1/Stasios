@@ -2,7 +2,7 @@ import { aboutText } from "../constants";
 
 const About = () => {
   return (
-    <div name="about" className="md:px-[5rem] m-auto justify-center">
+    <div name="about" id="about" className="md:px-[5rem] m-auto justify-center">
       <div className=" grid sm:grid-cols-1 md:grid-cols-2 lg:h-90 ">
         <div className=" grid-cols-1 bg-inside bg-center text-white text-center px-5 py-9 sm:py-20 sm:px-10 xl:py-14 xl:px-10">
           <h1 className=" text-4xl  font-black">{aboutText[0].title}</h1>

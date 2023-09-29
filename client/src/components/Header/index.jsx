@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
+import { Link, scroller } from "react-scroll";
 import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate and useLocation
 import Logo from "../../assets/LogoStasios.png";
 import BannerMap from "../../assets/BannerMap.jpg";
@@ -79,10 +79,21 @@ const NavBar = (section) => {
   }, []);
 
   const handleSectionClick = (section) => {
-    // Check if the URL ends with "/contact"
-    if (location.pathname.endsWith("/contact")) {
+    const pathname = location.pathname;
+
+    // Check if the URL ends with "/contact" or "/dashboard"
+    if (pathname.endsWith("/contact") || pathname.endsWith("/dashboard")) {
       // If it does, navigate to the home page
       navigate("/");
+
+      // Wait for a short delay (e.g., 300 milliseconds) before scrolling to the section
+      setTimeout(() => {
+        scroller.scrollTo(section, {
+          duration: 500, // Adjust the duration as needed
+          smooth: true,
+          offset: -56, // You may need to adjust this offset based on your layout
+        });
+      }, 300);
     } else if (section === "contact") {
       // If the section link is "contact," navigate to the "/contact" page
       navigate("/contact");
@@ -140,14 +151,14 @@ const NavBar = (section) => {
               className="px-10 mr- ml-10 cursor-pointer capitalize text-red-950 hover:scale-150 duration-200 text-shadow-css text-2xl"
             >
               <span
-                onClick={() => handleSectionClick(link)} // Call the updated function
-                style={{ cursor: "pointer" }}
+              // onClick={() => handleSectionClick(link)} // Call the updated function
+              // style={{ cursor: "pointer" }}
               >
                 {link === "contact" ? (
                   <a href="/contact">{link}</a>
                 ) : (
                   <Link
-                    onClick={handleSectionClick}
+                    onClick={() => handleSectionClick(link)}
                     to={link}
                     smooth={true}
                     duration={500}
