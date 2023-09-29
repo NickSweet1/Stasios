@@ -7,11 +7,11 @@ const Reviews = () => {
         <div className="flex gap-4">
   
           {/* First Review */}
-          <div className="flex flex-col gap-4 bg-gray-700 p-4 w-1/2">
+          <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 rounded-2xl opacity-90">
             <div className="flex justify-between">
               <div className="flex gap-2">
                 <div className="w-7 h-7 text-center text-white rounded-full bg-sred">J</div>
-                <span className='text-white'>Jess Hopkins</span>
+                <span className='text-white text-xl'>Jess Hopkins</span>
               </div>
               <div className="flex p-1 gap-1 text-orange-300">
                 <BiSolidStar />
@@ -30,11 +30,11 @@ const Reviews = () => {
           </div>
   
           {/* Second Review */}
-          <div className="flex flex-col gap-4 bg-gray-700 p-4 w-1/2">
+          <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 rounded-2xl opacity-90">
             <div className="flex justify-between">
               <div className="flex gap-2">
                 <div className="w-7 h-7 text-center text-white rounded-full bg-sred">T</div>
-                <span className='text-white'>Theresa Leinhart</span>
+                <span className='text-white text-xl'>Theresa Leinhart</span>
               </div>
               <div className="flex p-1 gap-1 text-orange-300">
                 <BiSolidStar />
@@ -56,11 +56,11 @@ const Reviews = () => {
         <div className="flex gap-4">
   
   {/* First Review */}
-  <div className="flex flex-col gap-4 bg-gray-700 p-4 w-1/2">
+  <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 rounded-2xl opacity-90">
     <div className="flex justify-between">
       <div className="flex gap-2">
         <div className="w-7 h-7 text-center text-white rounded-full bg-sred">S</div>
-        <span className='text-white'>Sasha Lovejoy</span>
+        <span className='text-white text-xl'>Sasha Lovejoy</span>
       </div>
       <div className="flex p-1 gap-1 text-orange-300">
         <BiSolidStar />
@@ -79,11 +79,11 @@ const Reviews = () => {
   </div>
 
   {/* Second Review */}
-  <div className="flex flex-col gap-4 bg-gray-700 p-4 w-full sm:w-1/2">
+  <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-full sm:w-1/2 rounded-2xl opacity-90">
     <div className="flex justify-between">
       <div className="flex gap-2">
-        <div className="w-8 h-8 text-center text-white rounded-full bg-sred">WJ</div>
-        <span className='text-white'>Wesley Jones</span>
+        <div className="w-8 h-8 text-center text-white rounded-full bg-sred">W</div>
+        <span className='text-white text-xl'>Wesley Jones</span>
       </div>
       <div className="flex p-1 gap-1 text-orange-300">
         <BiSolidStar />
