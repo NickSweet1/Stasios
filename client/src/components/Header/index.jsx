@@ -191,7 +191,7 @@ const NavBar = (section) => {
                 <a href="/contact">{link}</a>
               ) : (
                 <Link
-                  onClick={handleSectionClick}
+                  onClick={() => handleSectionClick(link)}
                   to={link}
                   smooth
                   duration={500}
