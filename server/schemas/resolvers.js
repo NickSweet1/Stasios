@@ -1,6 +1,9 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { Sub, User, Contact } = require("../models");
 const { signToken } = require("../utils/auth");
+const bcrypt = require('bcrypt');
+
+
 
 const resolvers = {
   Query: {
@@ -30,12 +33,33 @@ const resolvers = {
     },
   },
   Mutation: {
-    login: async (parent, { pin }) => {
-      const user = await User.findOne({ pin });
+    login: async (_, args) => {
+      try {
+        const { pin } = args;
+        // Find the user by either username or email
+        const user = await User.findOne({pin});      
+        if (!user) {
+          throw new Error("User Not Found");
+        }
+    
+        // Verify the pin
+        const pinMatch = bcrypt.compare(pin, user.pin);
+    
+        if (!pinMatch) {
+          throw new Error("Wrong Pin!");
+        }
+    
+        // Generate an authentication token
+        const token = signToken(user);
 
-      const token = signToken(user);
-
-      return { token, user };
+    
+        return {
+          user,
+          token,
+        };
+      } catch (error) {
+        throw new Error(`Failed To Locate User : ${error.message}`);
+      }
     },
     addSub: async (parent, { subName, ingredients, price }) => {
       const sub = await Sub.create({ subName, ingredients, price });
