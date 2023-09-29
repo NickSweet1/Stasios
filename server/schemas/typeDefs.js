@@ -4,8 +4,8 @@ const typeDefs = gql`
   type Sub {
     _id: ID
     subName: String!
-    ingredients: [String]!
-    price: Float!
+    ingredients: String!
+    price: String!
   }
   type User {
     _id: ID
@@ -36,9 +36,9 @@ const typeDefs = gql`
   }
   type Mutation {
     login(name: String, pin: String!): Auth
-    addSub(subName: String!, ingredients: String!, price: Int!): Sub
+    addSub(subName: String!, ingredients: String!, price: String): Sub
     removeSub(_id: ID!): Sub
-    editSub(_id: ID!, subName: String!, ingredients: [String], price: Int): Sub
+    editSub(_id: ID!, subName: String!, ingredients: String, price: String): Sub
     addContact(name: String!, email: String!, message: String!): Contact
   }
 `;

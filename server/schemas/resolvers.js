@@ -52,32 +52,36 @@ const resolvers = {
         console.log(`Sub ${_id} has been deleted`);
         return sub;
       }
-      },
-    editSub: async (parent, { subName, ingredients, price }) => {
-      const sub = await Sub.findOne({ subName });
-      
+    },
+    editSub: async (parent, { _id, subName, ingredients, price }) => {
+      const sub = await Sub.findOne({ _id });
+
       if (!sub) {
-        throw new Error(`Sub with name '${subName}' not found.`);
+        throw new Error(`Sub with ID '${_id}' not found.`);
       }
-  
+
       // Update the sub's properties
+      if (subName) {
+        sub.subName = subName;
+      }
 
       if (ingredients) {
         sub.ingredients = ingredients;
       }
+
       if (price) {
         sub.price = price;
       }
 
-        const updatedSub = await sub.save();
+      const updatedSub = await sub.save();
 
-        return updatedSub;
-      },
-      addContact: async (parent, { name, email, message }) => {
-        const contact = await Contact.create({ name, email, message });
-        return contact; 
-      },
-    }
-  };
+      return updatedSub;
+    },
+    addContact: async (parent, { name, email, message }) => {
+      const contact = await Contact.create({ name, email, message });
+      return contact;
+    },
+  },
+};
 
 module.exports = resolvers;
