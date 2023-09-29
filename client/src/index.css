@@ -26,3 +26,29 @@
     color: black; /* Black text */
     font-weight: bold; /* Bold font */
   }
+
+  .message-card-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .message-card-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .message-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .message-card h3 {
+    margin-top: 0;
+  }
+
+  .message-card p {
+    margin: 5px 0;
+  }
