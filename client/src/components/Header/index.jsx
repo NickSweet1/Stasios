@@ -137,7 +137,7 @@ const NavBar = (section) => {
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="px-10 mr-20 ml-10 cursor-pointer capitalize text-red-950 hover:scale-150 duration-200 text-shadow-css text-2xl"
+              className="px-10 mr- ml-10 cursor-pointer capitalize text-red-950 hover:scale-150 duration-200 text-shadow-css text-2xl"
             >
               <span
                 onClick={() => handleSectionClick(link)} // Call the updated function
