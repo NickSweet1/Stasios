@@ -4,6 +4,7 @@ import About from "../components/about";
 import MapSection from "../components/MapSection"
 import Menu from "../components/menu"
 import ComeDine from "../components/comedine"
+import Reviews from "../components/reviews";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Gallery />
       <MapSection/> 
       <ComeDine/>
+      <Reviews/>
     </div>
   );
 };
