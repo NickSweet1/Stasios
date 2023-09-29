@@ -38,3 +38,13 @@ export const ADD_MENU_ITEM = gql`
     }
   }
 `;
+
+export const ADD_COMMENT = gql`
+  mutation addSub($name: String!, $email: String!, $message: String!) {
+    addContact(name: $name, email: $email, message: $message) {
+      name
+      email
+      message
+    }
+  }
+`;

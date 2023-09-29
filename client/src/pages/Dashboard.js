@@ -6,6 +6,7 @@ import {
   EDIT_MENU_ITEM,
   ADD_MENU_ITEM,
 } from "../utils/mutations";
+import MessageCardComponent from "../components/commentDisplay";
 
 const EditForm = ({ item, onCancel, onSubmit }) => {
   const [editMenuItem] = useMutation(EDIT_MENU_ITEM);
@@ -202,19 +203,21 @@ const Menu = () => {
   const secondHalf = menuItems.slice(midpoint);
 
   const handleDeleteMenuItem = (itemId, subName) => {
-    const userConfirmed = window.confirm(`Are you sure you want to delete this sub?`);
+    const userConfirmed = window.confirm(
+      `Are you sure you want to delete this sub?`
+    );
     if (userConfirmed) {
-    console.log(itemId);
-    deleteMenuItem({
-      variables: { _id: itemId },
-      refetchQueries: [{ query: QUERY_SUBS }],
-    })
-      .then(() => {
-        console.log("Menu item deleted successfully");
+      console.log(itemId);
+      deleteMenuItem({
+        variables: { _id: itemId },
+        refetchQueries: [{ query: QUERY_SUBS }],
       })
-      .catch((error) => {
-        console.error("Error deleting menu item:", error);
-      });
+        .then(() => {
+          console.log("Menu item deleted successfully");
+        })
+        .catch((error) => {
+          console.error("Error deleting menu item:", error);
+        });
     }
   };
 
@@ -332,6 +335,7 @@ const Dashboard = () => {
       <div>
         <Menu />
         <AddForm />
+        <MessageCardComponent />
       </div>
     </>
   );
