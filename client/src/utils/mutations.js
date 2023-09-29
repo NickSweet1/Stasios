@@ -1,5 +1,16 @@
 import { gql } from "@apollo/client";
 
+export const LOGIN_ADMIN = gql`
+mutation Mutation($pin: String!) {
+  login(pin: $pin) {
+    token
+    user {
+      pin
+    }
+  }
+}
+`
+
 export const DELETE_MENU_ITEM = gql`
   mutation removeSub($_id: ID!) {
     removeSub(_id: $_id) {
@@ -35,6 +46,16 @@ export const ADD_MENU_ITEM = gql`
       subName
       ingredients
       price
+    }
+  }
+`;
+
+export const ADD_COMMENT = gql`
+  mutation addSub($name: String!, $email: String!, $message: String!) {
+    addContact(name: $name, email: $email, message: $message) {
+      name
+      email
+      message
     }
   }
 `;

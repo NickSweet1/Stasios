@@ -85,8 +85,7 @@ const Contact = () => {
               href={googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="absolute inset-0 flex items-center justify-center bg-lightgray opacity-75 hover:bg-black transition-opacity duration-300"
-            >
+              className="absolute inset-0 flex items-center justify-center bg-lightgray opacity-75 hover:bg-black transition-opacity duration-300">
               <div className="text-white text-center opacity-0 transition-opacity duration-300">
                 <p className="text-5xl">Come and visit</p>
               </div>
