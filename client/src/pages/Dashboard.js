@@ -6,7 +6,9 @@ import {
   EDIT_MENU_ITEM,
   ADD_MENU_ITEM,
 } from "../utils/mutations";
+import ManagerCard from "../components/uaCard";
 import MessageCardComponent from "../components/commentDisplay";
+import AuthService from "../utils/auth";
 
 const EditForm = ({ item, onCancel, onSubmit }) => {
   const [editMenuItem] = useMutation(EDIT_MENU_ITEM);
@@ -46,8 +48,8 @@ const EditForm = ({ item, onCancel, onSubmit }) => {
 
   return (
     <div className="bg-gray-200 rounded p-4 mt-4">
-      <h2 className='flex justify-center text-2xl'>Edit Menu Item</h2>
-      <form onSubmit={handleSubmit} >
+      <h2 className="flex justify-center text-2xl">Edit Menu Item</h2>
+      <form onSubmit={handleSubmit}>
         <label className="flex flex-col">
           Sub Name:
           <input
@@ -55,7 +57,7 @@ const EditForm = ({ item, onCancel, onSubmit }) => {
             name="subName"
             value={editedItem.subName}
             onChange={handleChange}
-            className='w-[13rem] p-3 border-2 border-amber-800 rounded-lg'
+            className="w-[13rem] p-3 border-2 border-amber-800 rounded-lg"
           />
         </label>
         <br />
@@ -66,23 +68,25 @@ const EditForm = ({ item, onCancel, onSubmit }) => {
             name="ingredients"
             value={editedItem.ingredients}
             onChange={handleChange}
-            className='w-[13rem] p-3 border-2 border-amber-800 rounded-lg'
+            className="w-[13rem] p-3 border-2 border-amber-800 rounded-lg"
           />
         </label>
         <br />
         <label className="flex flex-col">
-          Price:   
+          Price:
           <input
             type="number"
             name="price"
             value={editedItem.price}
             onChange={handleChange}
-            className='w-[13rem] p-3 border-2 border-amber-800 rounded-lg ml-[0.1rem]'
+            className="w-[13rem] p-3 border-2 border-amber-800 rounded-lg ml-[0.1rem]"
           />
         </label>
         <br />
-        <button type="submit" className='pr-[1rem] text-xl'>Save Changes</button>
-        <button type="button" className='text-xl' onClick={onCancel}>
+        <button type="submit" className="pr-[1rem] text-xl">
+          Save Changes
+        </button>
+        <button type="button" className="text-xl" onClick={onCancel}>
           Cancel
         </button>
       </form>
@@ -161,7 +165,9 @@ const AddForm = ({ item, onCancel, onSubmit }) => {
           />
         </label>
         <br />
-        <button className="text-shadow-css" type="submit">Save Changes</button>
+        <button className="text-shadow-css" type="submit">
+          Save Changes
+        </button>
       </form>
     </div>
   );
@@ -246,7 +252,7 @@ const Menu = () => {
           </button>
           {editItemId === item._id && (
             <EditForm
-              className='w-[21.5rem] p-3 border-2 border-amber-800 rounded-lg'
+              className="w-[21.5rem] p-3 border-2 border-amber-800 rounded-lg"
               item={menuItems.find((item) => item._id === editItemId)}
               onCancel={handleCancelEdit}
               onSubmit={handleEditFormSubmit}
@@ -292,16 +298,16 @@ const Menu = () => {
   };
 
   return (
-    <div
-      name="menu"
-      className="flex flex-col items-center min-h-screen max-h-3/4 relative px-4 max-w-[1200px] mx-auto bg-white">
+    <div className="flex flex-col items-center min-h-screen max-h-3/4 relative px-4 max-w-[1200px] mx-auto bg-white">
       {/* Add a small top border */}
       <div className="w-full md:w-px  h-1 mt-4"></div>
       <div className="text-3xl md:text-5xl lg:text-6xl text-center mb-6 relative">
         <span className="border-b-4 border-sgreen w-1/3 inline-block"></span>
         <span className="border-b-4 border-white w-1/3 inline-block"></span>
         <span className="border-b-4 border-sred w-1/3 inline-block"></span>
-        <span className="relative z-1 bg-white px-2 md:px-4 text-amber-900">Menu</span>
+        <span className="relative z-1 bg-white px-2 md:px-4 text-amber-900">
+          Menu
+        </span>
         <br />
         <span className="text-[30px] text-amber-700">
           Sandwiches / Desserts / Delicacies
@@ -332,11 +338,15 @@ const Menu = () => {
 const Dashboard = () => {
   return (
     <>
-      <div>
-        <Menu />
-        <AddForm />
-        <MessageCardComponent />
-      </div>
+      {AuthService.loggedIn() ? (
+        <div>
+          <Menu />
+          <AddForm />
+          <MessageCardComponent />
+        </div>
+      ) : (
+        <ManagerCard />
+      )}
     </>
   );
 };
