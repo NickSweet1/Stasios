@@ -1,30 +1,37 @@
 [
-    {
-        "name": "Caffè",
-        "price": "3.00"
-    },
-    {
-        "name": "Caffè Doppio",
-        "price": "4.00"
-    },
-    {
-        "name": "Cappuccino",
-        "price": "4.00"
-    },
-    {
-        "name": "Caffè Latte",
-        "price": "3.5"
-    },
-    {
-        "name": "Americano",
-        "price": "3.00"
-    },
-    {
-        "name": "Macchiato",
-        "price": "4.00"
-    },
-    {
-        "name": "Caffè Affogato",
-        "price": "5.50"
-    }
+  {
+    "name": "Caffè",
+    "price": "3.00",
+    "description": "Our classic Italian espresso made from finely ground coffee beans, delivering a rich and bold flavor that's truly satisfying."
+  },
+  {
+    "name": "Caffè Doppio",
+    "price": "4.00",
+    "description": "Double the pleasure with our Caffè Doppio, featuring two shots of intense espresso, offering an extra kick of caffeine to start your day."
+  },
+  {
+    "name": "Cappuccino",
+    "price": "4.00",
+    "description": "Indulge in the perfect balance of espresso, steamed milk, and creamy foam in our Cappuccino, topped with a sprinkle of cocoa or cinnamon."
+  },
+  {
+    "name": "Caffè Latte",
+    "price": "3.5",
+    "description": "Savor the harmonious blend of espresso and steamed milk in our Caffè Latte, delivering a smooth, comforting taste that's hard to resist."
+  },
+  {
+    "name": "Americano",
+    "price": "3.00",
+    "description": "Experience the boldness of espresso married with hot water in our Americano, creating a rich and satisfying coffee with a subtle kick."
+  },
+  {
+    "name": "Macchiato",
+    "price": "4.00",
+    "description": "Enjoy the simplicity of our Macchiato, featuring a shot of espresso 'stained' with a dollop of frothy milk for a delightful flavor contrast."
+  },
+  {
+    "name": "Caffè Affogato",
+    "price": "5.50",
+    "description": "Indulge in a heavenly dessert-like treat with our Caffè Affogato, where a scoop of velvety gelato is 'drowned' in a shot of hot espresso."
+  }
 ]

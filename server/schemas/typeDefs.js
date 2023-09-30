@@ -7,6 +7,18 @@ const typeDefs = gql`
     ingredients: String!
     price: String!
   }
+  type Coffee {
+    _id: ID
+    name: String!
+    description: String!
+    price: String!
+  }
+  type Dessert {
+    _id: ID
+    name: String!
+    description: String!
+    price: String!
+  }
   type User {
     _id: ID
     name: String!
@@ -32,6 +44,14 @@ const typeDefs = gql`
     sub(subName: String!): Sub
   }
   type Query {
+    subs: [Coffee]!
+    sub(name: String!): Sub
+  }
+  type Query {
+    subs: [Dessert]!
+    sub(name: String!): Sub
+  }
+  type Query {
     contacts: [Contact]
   }
   type Mutation {
@@ -39,6 +59,22 @@ const typeDefs = gql`
     addSub(subName: String!, ingredients: String!, price: String): Sub
     removeSub(_id: ID!): Sub
     editSub(_id: ID!, subName: String!, ingredients: String, price: String): Sub
+    addCoffee(name: String!, description: String!, price: String): Coffee
+    removeCoffee(_id: ID!): Coffee
+    editCoffee(
+      _id: ID!
+      name: String!
+      description: String
+      price: String
+    ): Coffee
+    addDessert(name: String!, description: String!, price: String): Dessert
+    removeDessert(_id: ID!): Dessert
+    editDessert(
+      _id: ID!
+      name: String!
+      description: String
+      price: String
+    ): Dessert
     addContact(name: String!, email: String!, message: String!): Contact
   }
 `;

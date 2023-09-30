@@ -1,30 +1,37 @@
 [
-    {
-        "name": "Biscotti",
-        "price": "4.95"
-    },
-    {
-        "name": "Tiramisù",
-        "price": "5.00"
-    },
-    {
-        "name": "Cannoli",
-        "price": "3.50"
-    },
-    {
-        "name": "Panettone",
-        "price": "4.00"
-    },
-    {
-        "name": "Napoletano",
-        "price": "5.00"
-    },
-    {
-        "name": "Bussolai",
-        "price": "3.50"
-    },
-    {
-        "name": "Sfogliatelle",
-        "price": "5.00"
-    }
+  {
+    "name": "Biscotti",
+    "price": "4.95",
+    "description": "Indulge in our crunchy Biscotti, filled with aromatic almonds and a hint of vanilla, perfect for dipping in your favorite coffee or tea."
+  },
+  {
+    "name": "Tiramisù",
+    "price": "5.00",
+    "description": "Experience the exquisite layers of our Tiramisù, featuring delicate ladyfingers soaked in espresso and layered with mascarpone cheese, cocoa, and a touch of liqueur."
+  },
+  {
+    "name": "Cannoli",
+    "price": "3.50",
+    "description": "Delight in the classic Sicilian dessert, Cannoli, with its crisp pastry shell filled with sweet ricotta cheese, chocolate chips, and a sprinkle of powdered sugar."
+  },
+  {
+    "name": "Panettone",
+    "price": "4.00",
+    "description": "Savor the traditional Italian Panettone, a light and airy sweet bread studded with candied fruits and raisins, perfect for festive occasions."
+  },
+  {
+    "name": "Napoletano",
+    "price": "5.00",
+    "description": "Treat yourself to the irresistible Napoletano dessert, a heavenly combination of pastry layers, sweet ricotta, and candied fruit, all topped with a delicate glaze."
+  },
+  {
+    "name": "Bussolai",
+    "price": "3.50",
+    "description": "Enjoy our delicate Bussolai cookies, lightly sweetened and shaped into rings, a perfect accompaniment to your afternoon tea or coffee."
+  },
+  {
+    "name": "Sfogliatelle",
+    "price": "5.00",
+    "description": "Discover the flaky layers of our Sfogliatelle pastry, filled with creamy ricotta and a hint of citrus, creating a delightful sweet and tangy flavor."
+  }
 ]
