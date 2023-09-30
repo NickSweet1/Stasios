@@ -7,7 +7,7 @@ const Reviews = () => {
         <div className="flex gap-4">
   
           {/* First Review */}
-          <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 rounded-2xl opacity-90">
+          <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 ml-[16rem] rounded-2xl opacity-90 lg:visible lg:ml-[0rem]">
             <div className="flex justify-between">
               <div className="flex gap-2">
                 <div className="w-7 h-7 text-center text-white rounded-full bg-sred">J</div>
@@ -30,7 +30,7 @@ const Reviews = () => {
           </div>
   
           {/* Second Review */}
-          <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 rounded-2xl opacity-90">
+          <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 rounded-2xl opacity-90 invisible lg:visible">
             <div className="flex justify-between">
               <div className="flex gap-2">
                 <div className="w-7 h-7 text-center text-white rounded-full bg-sred">T</div>
@@ -56,7 +56,7 @@ const Reviews = () => {
         <div className="flex gap-4">
   
   {/* First Review */}
-  <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 rounded-2xl opacity-90">
+  <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-1/2 ml-[16rem] rounded-2xl opacity-90 lg:visible lg:ml-[0rem]">
     <div className="flex justify-between">
       <div className="flex gap-2">
         <div className="w-7 h-7 text-center text-white rounded-full bg-sred">S</div>
@@ -79,7 +79,7 @@ const Reviews = () => {
   </div>
 
   {/* Second Review */}
-  <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-full sm:w-1/2 rounded-2xl opacity-90">
+  <div className="flex flex-col gap-4 bg-yellow-950 p-4 w-full sm:w-1/2 rounded-2xl opacity-90 invisible lg:visible">
     <div className="flex justify-between">
       <div className="flex gap-2">
         <div className="w-8 h-8 text-center text-white rounded-full bg-sred">W</div>
