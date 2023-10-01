@@ -233,7 +233,8 @@ const Menu = () => {
         <div className="bg-gray-100 rounded-lg p-4">
           <button
             onClick={() => handleDeleteMenuItem(item._id)}
-            className="text-red-500 font-bold pr-3 text-3xl">
+            className="text-red-500 font-bold pr-3 text-3xl"
+          >
             X
           </button>
 
@@ -247,7 +248,8 @@ const Menu = () => {
           </p>
           <button
             onClick={() => handleEditMenuItem(item._id)}
-            className="text-blue-500 font-bold">
+            className="text-blue-500 font-bold"
+          >
             Edit
           </button>
           {editItemId === item._id && (
@@ -269,7 +271,8 @@ const Menu = () => {
         <div className="bg-gray-100 rounded-lg p-4">
           <button
             onClick={() => handleDeleteMenuItem(item._id)}
-            className="text-red-500 font-bold pr-3 text-3xl">
+            className="text-red-500 font-bold pr-3 text-3xl"
+          >
             X
           </button>
           <strong className="text-lg md:text-xl lg:text-2xl">
@@ -282,7 +285,8 @@ const Menu = () => {
           </p>
           <button
             onClick={() => handleEditMenuItem(item._id)}
-            className="text-blue-500 font-bold">
+            className="text-blue-500 font-bold"
+          >
             Edit
           </button>
           {editItemId === item._id && (

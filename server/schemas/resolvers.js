@@ -1,9 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { Sub, User, Contact } = require("../models");
+const { Sub, User, Contact, Coffee, Dessert } = require("../models");
 const { signToken } = require("../utils/auth");
-const bcrypt = require('bcrypt');
-
-
+const bcrypt = require("bcrypt");
 
 const resolvers = {
   Query: {
@@ -12,6 +10,18 @@ const resolvers = {
     },
     sub: async (parent, { subName }) => {
       return Sub.findOne({ subName });
+    },
+    coffees: async () => {
+      return Coffee.find();
+    },
+    coffee: async (parent, { name }) => {
+      return Coffee.findOne({ name });
+    },
+    desserts: async () => {
+      return Dessert.find();
+    },
+    dessert: async (parent, { name }) => {
+      return Dessert.findOne({ name });
     },
     users: async () => {
       return User.find();
@@ -37,22 +47,21 @@ const resolvers = {
       try {
         const { pin } = args;
         // Find the user by either username or email
-        const user = await User.findOne({pin});      
+        const user = await User.findOne({ pin });
         if (!user) {
           throw new Error("User Not Found");
         }
-    
+
         // Verify the pin
         const pinMatch = bcrypt.compare(pin, user.pin);
-    
+
         if (!pinMatch) {
           throw new Error("Wrong Pin!");
         }
-    
+
         // Generate an authentication token
         const token = signToken(user);
 
-    
         return {
           user,
           token,
@@ -100,6 +109,86 @@ const resolvers = {
       const updatedSub = await sub.save();
 
       return updatedSub;
+    },
+    addCoffee: async (parent, { name, description, price }) => {
+      const coffee = await Coffee.create({ name, description, price });
+
+      return coffee;
+    },
+    removeCoffee: async (parent, { _id }) => {
+      const coffee = await Coffee.findOne({ _id });
+
+      if (!coffee) {
+        throw new Error(`No coffee with ID ${_id} found.`);
+      } else {
+        await Coffee.deleteOne({ _id });
+        console.log(`Coffee ${_id} has been deleted`);
+        return coffee;
+      }
+    },
+    editCoffee: async (parent, { _id, name, description, price }) => {
+      const coffee = await Coffee.findOne({ _id });
+
+      if (!coffee) {
+        throw new Error(`Coffee with ID '${_id}' not found.`);
+      }
+
+      // Update the coffee's properties
+      if (name) {
+        coffee.name = name;
+      }
+
+      if (description) {
+        coffee.description = description;
+      }
+
+      if (price) {
+        coffee.price = price;
+      }
+
+      const updatedCoffee = await coffee.save();
+
+      return updatedCoffee;
+    },
+    addDessert: async (parent, { name, description, price }) => {
+      const dessert = await Dessert.create({ name, description, price });
+
+      return dessert;
+    },
+    removeDessert: async (parent, { _id }) => {
+      const dessert = await Dessert.findOne({ _id });
+
+      if (!dessert) {
+        throw new Error(`No dessert with ID ${_id} found.`);
+      } else {
+        await Dessert.deleteOne({ _id });
+        console.log(`Dessert ${_id} has been deleted`);
+        return dessert;
+      }
+    },
+    editDessert: async (parent, { _id, name, description, price }) => {
+      const dessert = await Dessert.findOne({ _id });
+
+      if (!dessert) {
+        throw new Error(`Dessert with ID '${_id}' not found.`);
+      }
+
+      // Update the dessert's properties
+      if (name) {
+        dessert.name = name;
+      }
+
+      if (description) {
+        dessert.description = description;
+      }
+
+      if (price) {
+        dessert.price = price;
+      }
+
+      const updatedDessert = await dessert.save();
+
+      return updatedDessert;
     },
     addContact: async (parent, { name, email, message }) => {
       const contact = await Contact.create({ name, email, message });

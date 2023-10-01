@@ -1,5 +1,5 @@
 import ContactForm from "../components/contactForm";
-import map from "../assets/othermap.jpg";
+import map from "../assets/othermap.jpg"; 
 
 import { FaFacebookF, FaYelp, FaInstagram } from "react-icons/fa";
 

@@ -11,6 +11,27 @@ export const QUERY_SUBS = gql`
   }
 `;
 
+export const QUERY_COFFEE = gql`
+  query Query {
+    coffees {
+      _id
+      description
+      price
+      name
+    }
+  }
+`;
+export const QUERY_DESSERT = gql`
+  query Query {
+    desserts {
+      _id
+      description
+      price
+      name
+    }
+  }
+`;
+
 export const QUERY_CONTACTS = gql`
   query Query {
     contacts {
