@@ -44,12 +44,12 @@ const typeDefs = gql`
     sub(subName: String!): Sub
   }
   type Query {
-    subs: [Coffee]!
-    sub(name: String!): Sub
+    coffee: [Coffee]!
+    sub(name: String!): Coffee
   }
   type Query {
-    subs: [Dessert]!
-    sub(name: String!): Sub
+    dessert: [Dessert]!
+    sub(name: String!): Dessert
   }
   type Query {
     contacts: [Contact]
