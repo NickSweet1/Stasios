@@ -16,9 +16,12 @@ const Contact = () => {
   const yelpNav = () => {
     window.open("https://www.yelp.com/biz/stasios-orlando", "_blank");
   };
-
-  const googleMapsUrl =
-    "https://www.google.com/maps/place/Stasio's+Italian+Deli+%26+Market/@28.5457224,-81.354684,17z/data=!4m6!3m5!1s0x88e77ada611aaaab:0xb80ed6b6c26907dd!8m2!3d28.5457224!4d-81.3521037!16s%2Fg%2F11ggsrj9kd?entry=ttu";
+  const mapNav = () => {
+    window.open(
+      "https://www.google.com/maps/place/Stasio's+Italian+Deli+%26+Market/@28.5457224,-81.354684,17z/data=!4m6!3m5!1s0x88e77ada611aaaab:0xb80ed6b6c26907dd!8m2!3d28.5457224!4d-81.3521037!16s%2Fg%2F11ggsrj9kd?entry=ttu",
+      "_blank"
+    );
+  };
 
   return (
     <>
@@ -80,34 +83,11 @@ const Contact = () => {
             </div>
           </div>
           <div className="relative">
-            {/* Dark overlay with text */}
-            <a
-              href={googleMapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute inset-0 flex items-center justify-center bg-lightgray opacity-75 hover:bg-black transition-opacity duration-300">
-              <div className="text-white text-center opacity-0 transition-opacity duration-300">
-                <p className="text-5xl">Come and visit</p>
-              </div>
-            </a>
-
-            {/* Hover effect for text */}
-            <style>
-              {`
-          .bg-lightgray {
-            transition: background-color 0.3s;
-          }
-
-          .bg-lightgray:hover .opacity-0 {
-            opacity: 1;
-          }
-        `}
-            </style>
-
             <img
               src={map}
               alt="map"
-              className="w-full h-[300px] object-cover hover:scale-110 ease-in duration-200 rounded-2xl drop-shadow-2xl"
+              onClick={mapNav}
+              className="w-full h-[300px] object-cover hover:scale-110 hover:opacity-90 cursor-pointer ease-in duration-200 rounded-2xl drop-shadow-2xl"
             />
           </div>
         </div>

@@ -3,5 +3,15 @@
         "name": "Karen Smith",
         "email": "karensmith1@gmail.com",
         "message": "Can I speak to a manager?"
+    },
+    {
+        "name": "Gurmeet",
+        "email": "gurmeet@gmail.com",
+        "message": "Wow great project guys! John and Gerard should definitely give you guys a 100%!"
+    },
+    {
+        "name": "random student",
+        "email": "codingstudent@gmail.com",
+        "message": "Are we recording?"
     }
 ]
