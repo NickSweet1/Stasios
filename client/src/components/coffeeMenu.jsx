@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_COFFEE } from '../utils/queries';
 
-const Menu = () => {
+const CoffeeMenu = () => {
   // Use the useQuery hook to fetch data and handle errors
   const { data, loading, error } = useQuery(QUERY_COFFEE);
 
@@ -58,17 +58,6 @@ const Menu = () => {
   };
 
   return (
-    <div name='menu' className='bg-white rounded-xl items-center min-h-screen max-h-3/4 relative mb-4 p-4 mt-[13rem] px-4 max-w-[1500px] mx-auto text-amber-950'>
-      {/* Add a small top border */}
-      <div className='w-full md:w-px bg-gray-300 h-1 mt-4'></div>
-      <div className='text-3xl md:text-5xl lg:text-6xl text-center mb-6 relative'>
-        <span className='border-b-4 border-sgreen w-1/3 inline-block'></span>
-        <span className='border-b-4 border-white w-1/3 inline-block'></span>
-        <span className='border-b-4 border-sred w-1/3 inline-block'></span>
-        <span className='relative z-1 px-2 md:px-4'>Our Menu</span>
-        <br />
-        <span className="text-[30px] text-amber-800 opacity-50 cursor-pointer"><span className='cursor-pointer'>Sandwiches</span> / <span className="cursor-pointer">Desserts</span> / <span className="cursor-pointer underline decoration-black" >Coffees</span></span> {/* Smaller and light grey */}
-      </div>
       <div className='flex flex-col md:flex-row w-full'>
         <div className='w-full md:w-[750px] p-10'>
           <div className='flex flex-col items-center'>
@@ -87,11 +76,8 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-      </div>
-      {/* Add a small bottom border */}
-      <div className='w-full md:w-px bg-gray-300 h-1'></div>
-    </div>
+      </div>  
   );
 };
 
-export default Menu;
+export default CoffeeMenu;
