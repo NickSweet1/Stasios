@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link, scroller } from "react-scroll";
-import { useNavigate, useLocation } from "react-router-dom"; // Import useNavigate and useLocation
+import { Link as LINKS, scroller } from "react-scroll";
+import { Link, useNavigate, useLocation } from "react-router-dom"; // Import useNavigate and useLocation
 import Logo from "../../assets/LogoStasios.png";
 import BannerMap from "../../assets/BannerMap.jpg";
 
@@ -155,9 +155,9 @@ const NavBar = (section) => {
               // style={{ cursor: "pointer" }}
               >
                 {link === "contact" ? (
-                  <a href="/contact">{link}</a>
+                  <Link to="/contact">{link}</Link>
                 ) : (
-                  <Link
+                  <LINKS
                     onClick={() => handleSectionClick(link)}
                     to={link}
                     smooth={true}
@@ -165,7 +165,7 @@ const NavBar = (section) => {
                     offset={-56} // You may need to adjust this offset based on your layout
                   >
                     {link}
-                  </Link>
+                  </LINKS>
                 )}
               </span>
             </li>
@@ -188,16 +188,16 @@ const NavBar = (section) => {
               className="px-4 cursor-pointer capitalize py-[2rem] text-4xl hover:scale-110 duration-200 text-red-950"
             >
               {link === "contact" ? (
-                <a href="/contact">{link}</a>
+                <Link to="/contact">{link}</Link>
               ) : (
-                <Link
+                <LINKS
                   onClick={() => handleSectionClick(link)}
                   to={link}
                   smooth
                   duration={500}
                 >
                   {link}
-                </Link>
+                </LINKS>
               )}
             </li>
           ))}
