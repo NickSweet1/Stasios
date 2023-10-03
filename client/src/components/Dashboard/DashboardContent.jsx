@@ -1,38 +1,35 @@
 import React, { useState } from "react";
 
-//imoprting the new menus for the sick conditional/tertiary
-import CoffeeMenu from "./coffeeMenu";
-import DessertMenu from "./dessertMenu";
-import SandwichMenu from "./sandwhichMenu";
+import MessageCardComponent from "./commentDisplay";
 
-const Menu = () => {
+import Menu from "./menu";
+import DessertMenu from "./dessertMenu";
+import CoffeeMenu from "./coffeeMenu";
+import { AddForm, CoffeeAddForm, DessertAddForm } from "./addForm";
+
+const DashboardContent = () => {
   const [showCoffeeMenu, setShowCoffeeMenu] = useState(false);
   const [showDessertMenu, setShowDessertMenu] = useState(false);
   const [showSandwichMenu, setShowSandwichMenu] = useState(true);
-
   const showSandwichMenuHandler = () => {
     setShowCoffeeMenu(false);
     setShowDessertMenu(false);
     setShowSandwichMenu(true);
   };
-
   const showDessertMenuHandler = () => {
     setShowCoffeeMenu(false);
     setShowDessertMenu(true);
     setShowSandwichMenu(false);
   };
-
   const showCoffeeMenuHandler = () => {
     setShowCoffeeMenu(true);
     setShowDessertMenu(false);
     setShowSandwichMenu(false);
   };
-
   return (
     <div
       name="menu"
-      className="bg-white rounded-xl items-center min-h-screen max-h-3/4 relative mb-4 p-4 mt-[13rem] px-4 max-w-[1500px] mx-auto text-amber-950"
-    >
+      className="bg-white rounded-xl items-center min-h-screen max-h-3/4 relative mb-4 p-4 mt-1 px-4 max-w-[1500px] mx-auto text-amber-950">
       {/* Add a small top border */}
       <div className="w-full md:w-px bg-gray-300 h-1 mt-4"></div>
       <div className="text-3xl md:text-5xl lg:text-6xl text-center mb-6 relative">
@@ -43,41 +40,51 @@ const Menu = () => {
         <br />
         <span className="text-[30px] text-amber-800 opacity-50">
           <span
-            className={`border-b-4 cursor-pointer ${showSandwichMenu ? "border-sgreen" : ""}`}
-            onClick={showSandwichMenuHandler}
-          >
+            className={` ${showSandwichMenu ? "underline" : ""} cursor-pointer`}
+            onClick={showSandwichMenuHandler}>
             Sandwiches
           </span>
           /
           <span
-            className={`border-b-4 cursor-pointer ${showDessertMenu ? "border-white" : ""}`}
-            onClick={showDessertMenuHandler}
-          >
+            className={` ${showDessertMenu ? "underline" : ""} cursor-pointer`}
+            onClick={showDessertMenuHandler}>
             Desserts
           </span>
           /
           <span
-            className={`border-b-4 cursor-pointer ${showCoffeeMenu ? "border-sred" : ""}`}
-            onClick={showCoffeeMenuHandler}
-          >
+            className={` ${showCoffeeMenu ? "underline" : ""} cursor-pointer`}
+            onClick={showCoffeeMenuHandler}>
             Coffees
           </span>
         </span>{" "}
         {/* Smaller and light grey */}
       </div>
+      {/* hey chatgpt add the menus here and put conditionals when n item in the sapn is active the correpsonding menu items render and make the span have an underline using tailwind classes */}
+      {/* Add a small bottom border */}
       {showSandwichMenu && (
-  <SandwichMenu/>
-)}
-{showDessertMenu && (
-  <DessertMenu/>
-)}
-{showCoffeeMenu && (
-  <CoffeeMenu/>
-)}
-
+        <>
+          <Menu />
+          <AddForm />
+          <MessageCardComponent />
+        </>
+      )}
+      {showDessertMenu && (
+        <>
+          <DessertMenu />
+          <DessertAddForm />
+          <MessageCardComponent />
+        </>
+      )}
+      {showCoffeeMenu && (
+        <>
+          <CoffeeMenu />
+          <CoffeeAddForm />
+          <MessageCardComponent />
+        </>
+      )}
       <div className="w-full md:w-px bg-gray-300 h-1"></div>
     </div>
   );
 };
 
-export default Menu;
+export default DashboardContent;
