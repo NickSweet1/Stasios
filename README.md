@@ -59,7 +59,7 @@ npm run develop
 ### Accessing the Website:
 
 1. Open your web browser.
-2. Visit the deployed website using the following link: Stasio's Website.
+2. Visit the deployed website using the following link: [Stasio's Website](https://stasios-7fcd485311cd.herokuapp.com/).
 
 ### Exploring the Website:
 
