@@ -25,7 +25,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="flex m-auto pt-16 justify-center items-center">
+      <div name="contact" id="contact" className="flex m-auto pt-16 justify-center items-center">
         <div className="flex w-[500px] bg-bgMap bg-center h-16 justify-center items-center rounded-2xl drop-shadow-2xl">
           <h1 className="font-bold text-[3.4rem] text-left">
             <span className="text-white drop-shadow-2xl bg-[#019246]">CO</span>

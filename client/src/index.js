@@ -9,7 +9,7 @@ const client = new ApolloClient({
     // use for Heroku deploymet
     "/graphql",
   // use for local deploymet
-  //"http://localhost:3001/graphql",
+  // "http://localhost:3001/graphql",
   cache: new InMemoryCache(),
 });
 
