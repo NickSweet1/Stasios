@@ -94,9 +94,12 @@ const NavBar = (section) => {
           offset: -56, // You may need to adjust this offset based on your layout
         });
       }, 300);
+
+      setNav(false);
     } else if (section === "contact") {
       // If the section link is "contact," navigate to the "/contact" page
       navigate("/contact");
+      setNav(false);
     } else {
       // Otherwise, scroll to the section on the same page
       const targetSection = document.getElementById(section);
@@ -188,7 +191,9 @@ const NavBar = (section) => {
               className="px-4 cursor-pointer capitalize py-[2rem] text-4xl hover:scale-110 duration-200 text-red-950"
             >
               {link === "contact" ? (
-                <Link to="/contact">{link}</Link>
+                <Link to="/contact" onClick={() => handleSectionClick(link)}>
+                  {link}
+                </Link>
               ) : (
                 <LINKS
                   onClick={() => handleSectionClick(link)}
