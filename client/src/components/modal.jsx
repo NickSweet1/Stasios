@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useMutation } from '@apollo/client'
-import { LOGIN_ADMIN } from '../utils/mutations';
-import Auth from '../utils/auth';
+import React, { useEffect, useState } from "react";
+import { useMutation } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
+import { LOGIN_ADMIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const Modal = ({ setIsOpen }) => {
+  const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [login] = useMutation(LOGIN_ADMIN);
 
-  const [userFormData, setUserFormData] = useState({ pin: '' });
+  const [userFormData, setUserFormData] = useState({ pin: "" });
   const [validated] = useState(false);
 
   const handleInputChange = (event) => {
@@ -27,24 +29,27 @@ const Modal = ({ setIsOpen }) => {
 
     try {
       // Log userFormData before making the GraphQL mutation
-      console.log('User Form Data:', userFormData);
+      console.log("User Form Data:", userFormData);
 
       const { data } = await login({ variables: userFormData });
 
       // Log the response from the GraphQL mutation
-      console.log('GraphQL Mutation Response:', data);
+      console.log("GraphQL Mutation Response:", data);
 
       if (data) {
         const { token, user } = data.login;
-        console.log('User Data:', user);
+        console.log("User Data:", user);
         Auth.login(token);
+
+        navigate("/dashboard");
+        closeModal();
       }
     } catch (err) {
       console.error(err);
     }
 
     setUserFormData({
-      pin: ''
+      pin: "",
     });
   };
 
@@ -66,10 +71,17 @@ const Modal = ({ setIsOpen }) => {
 
   return (
     <form noValidate validated={validated}>
-      <div className={`fixed inset-0 flex items-center justify-center z-50 transition-transform duration-300 ${showModal ? 'translate-y-0' : 'translate-y-full'}`}>
-
+      <div
+        className={`fixed inset-0 flex items-center justify-center z-50 transition-transform duration-300 ${
+          showModal ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
         {/* Modal */}
-        <div className={`bg-white p-6 rounded shadow-lg lg:w-1/3 md:w-1/2 text-black relative transform ${showModal ? '-translate-y-1/2' : 'translate-y-full'}`}>
+        <div
+          className={`bg-white p-6 rounded shadow-lg lg:w-1/3 md:w-1/2 text-black relative transform ${
+            showModal ? "-translate-y-1/2" : "translate-y-full"
+          }`}
+        >
           <div className="mb-4">
             <input
               placeholder="Enter pin..."
