@@ -76,6 +76,7 @@ const typeDefs = gql`
       price: String
     ): Dessert
     addContact(name: String!, email: String!, message: String!): Contact
+    removeContact(_id: ID!): Contact
   }
 `;
 

@@ -136,25 +136,20 @@ const CoffeeMenu = () => {
   return (
     <div
       name="menu"
-      className="bg-white rounded-xl items-center min-h-screen max-h-3/4 relative mb-4 p-4 mt-4 px-4 max-w-[1500px] mx-auto text-amber-950">
-      {/* Add a small top border */}
+      className="flex flex-col items-center min-h-screen max-h-3/4 relative px-4 max-w-[1200px] mx-auto bg-white">
       <div className="flex flex-col md:flex-row w-full">
-        <div className="w-full md:w-[750px] p-10">
-          <div className="flex flex-col items-center">
-            <ul className="text-gray-600">
-              {renderFirstMenuItems()}
-              {/* Add more menu items here */}
-            </ul>
-          </div>
+        <div className="w-full md:w-[600px] p-10">
+          <ul className="text-amber-900">
+            {renderFirstMenuItems()}
+            {/* Add more menu items here */}
+          </ul>
         </div>
         <div className="w-full md:w-px bg-gray-300 md:h-[80vh]"></div>
-        <div className="w-full md:w-[750px] p-10">
-          <div className="flex flex-col items-center">
-            <ul className="text-amber-800">
-              {renderSecondMenuItems()}
-              {/* Add more menu items here */}
-            </ul>
-          </div>
+        <div className="w-full md:w-[600px] p-10">
+          <ul className="text-amber-900">
+            {renderSecondMenuItems()}
+            {/* Add more menu items here */}
+          </ul>
         </div>
       </div>
       {/* Add a small bottom border */}

@@ -35,6 +35,14 @@ export const DELETE_DESSERT_MENU = gql`
   }
 `;
 
+export const DELETE_COMMENT = gql`
+  mutation removeContact($_id: ID!) {
+    removeContact(_id: $_id) {
+      _id
+    }
+  }
+`;
+
 export const EDIT_MENU_ITEM = gql`
   mutation editSub(
     $_id: ID!
