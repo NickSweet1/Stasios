@@ -194,6 +194,17 @@ const resolvers = {
       const contact = await Contact.create({ name, email, message });
       return contact;
     },
+    removeContact: async (parent, { _id }) => {
+      const contact = await Contact.findOne({ _id });
+
+      if (!contact) {
+        throw new Error(`No comment with ID ${_id} found.`);
+      } else {
+        await Contact.deleteOne({ _id });
+        console.log(`Comment ${_id} has been deleted`);
+        return contact;
+      }
+    },
   },
 };
 

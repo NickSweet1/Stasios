@@ -22,7 +22,7 @@ const galleryImages = [
     title: "Pasta Salad",
     description:
       "Loaded and refreshing Italian Pasta Salad! Made with tender pasta, smoked salami, fresh veggies and herbs, two types of cheese, and a tangy homemade Italian dressing.",
-    image: "https://i.imgur.com/Vkysgnf.jpg",
+    image: "https://i.imgur.com/bQTGeQy.jpg",
   },
   {
     title: "Italian American",
@@ -69,7 +69,7 @@ const galleryImages = [
     title: "D",
     description:
       "D is for delicious! This sub boasts chicken cutlet, broccoli rabe, long hots, and melted fresh mozzarella cheese. A taste sensation",
-    image: "https://i.imgur.com/1ZILcrV.jpg",
+    image: "https://i.imgur.com/WOc2z8N.jpg",
   },
   {
     title: "Ham, Egg, and Cheese",
