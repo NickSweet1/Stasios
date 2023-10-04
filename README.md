@@ -113,8 +113,7 @@ If you would like to contribute as a developer, you can contact us with your sug
 9. <a href = https://tailwindcss.com/>TailwindCSS Documentation</a>
 
 ## Deployment Link
-https://stasios-d832d14ac640.herokuapp.com/
-
+ [Stasio's Website](https://stasios-7fcd485311cd.herokuapp.com/).
 
 ## Github Repository
 https://github.com/NickSweet1/Stasios
